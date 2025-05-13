@@ -1,0 +1,32 @@
+name: nielsen_flutter_plugin
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: nielsen_flutter_plugin_android
+      ios:
+        default_package: nielsen_flutter_plugin_ios
+
+dependencies:
+  flutter:
+    sdk: flutter
+  nielsen_flutter_plugin_android:
+    path: ../nielsen_flutter_plugin_android
+  nielsen_flutter_plugin_ios:
+    path: ../nielsen_flutter_plugin_ios
+  nielsen_flutter_plugin_platform_interface:
+    path: ../nielsen_flutter_plugin_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  plugin_platform_interface: ^2.1.8
+  very_good_analysis: ^6.0.0
