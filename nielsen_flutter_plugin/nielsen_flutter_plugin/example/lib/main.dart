@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                 if (!context.mounted) return;
                 try {
                   final appInfoData = await NielsenFlutterPluginPlatform.instance.getAppInfo();
-                  final result = await platform?.createInstance(appInfoData);
+                  final result = await platform?.createInstance(jsonEncode(appInfoData));
                   setState(() => _platformName = result);
                 } catch (error) {
                   if (!context.mounted) return;
