@@ -19,7 +19,7 @@ Future<Map<String, String>> getAppInfo() async {
 
 
 Future<String> createInstance(Map<String, String> data) async {
-  final platformName = await _platform.createInstance(data);
+  final platformName = await _platform.createInstance(jsonEncode(data));
   if (platformName == null) throw Exception('Unable to get platform name.');
   return platformName;
 }
