@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
-  nielsen_flutter_plugin_ios: cb22bb9e10267d31cf76cc6fc1b2f05741b90432
+  nielsen_flutter_plugin_ios: be38928e483e310f80c981a36c929f4f7e9fab68
 
 PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
 

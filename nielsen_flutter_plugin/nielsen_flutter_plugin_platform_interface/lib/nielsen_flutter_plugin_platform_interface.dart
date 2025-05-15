@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:nielsen_flutter_plugin_platform_interface/src/method_channel_nielsen_flutter_plugin.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:nielsen_flutter_plugin_platform_interface/src/constants.dart';
 
 /// The interface that implementations of nielsen_flutter_plugin must implement.
 ///
@@ -28,6 +31,23 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
     _instance = instance;
   }
 
+
+  Future<Map<String, String>> getAppInfo();
   /// Return the current platform name.
   Future<String?> getPlatformName();
+
+  Future<String?> callMethodChannels(String type, String data);
+
+  Future<String?> createInstance(Map<String, String> data);
+  Future<String?> loadMetadata(String data);
+  Future<String?> play(String data);
+  Future<String?> stop();
+  Future<String?> end();
+  Future<String?> setPlayheadPosition(String data);
+  Future<String?> getOptOutStatus();
+  Future<String?> userOptOutURLString();
+  Future<String?> getMeterVersion();
+  Future<String?> staticEnd();
+  Future<String?> free();
+
 }
