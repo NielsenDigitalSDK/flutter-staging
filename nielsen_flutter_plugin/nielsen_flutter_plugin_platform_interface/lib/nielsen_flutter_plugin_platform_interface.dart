@@ -38,7 +38,7 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
 
   Future<String?> callMethodChannels(String type, String data);
 
-  Future<String?> createInstance(Map<String, String> data);
+  Future<String?> createInstance(String data);
   Future<String?> loadMetadata(String data);
   Future<String?> play(String data);
   Future<String?> stop();
@@ -49,5 +49,6 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
   Future<String?> getMeterVersion();
   Future<String?> staticEnd();
   Future<String?> free();
+  Future<String?> sendID3(String data);
 
 }

@@ -32,8 +32,8 @@ class NielsenFlutterPluginAndroid extends NielsenFlutterPluginPlatform {
   }
   
   @override
-  Future<String?> createInstance(Map<String, String> data) {
-    return methodChannel.invokeMethod<String>(constants.createInstance, jsonEncode(data));
+  Future<String?> createInstance(String data) {
+    return methodChannel.invokeMethod<String>(constants.createInstance, data);
   }
   
   @override
@@ -58,17 +58,17 @@ class NielsenFlutterPluginAndroid extends NielsenFlutterPluginPlatform {
   
   @override
   Future<String?> loadMetadata(String data) {
-    return methodChannel.invokeMethod<String>(constants.loadMetadata, jsonEncode(data));
+    return methodChannel.invokeMethod<String>(constants.loadMetadata, data);
   }
   
   @override
   Future<String?> play(String data) {
-    return methodChannel.invokeMethod<String>(constants.play, jsonEncode(data));
+    return methodChannel.invokeMethod<String>(constants.play, data);
   }
   
   @override
   Future<String?> setPlayheadPosition(String data) {
-    return methodChannel.invokeMethod<String>(constants.setPlayheadPosition, jsonEncode(data));
+    return methodChannel.invokeMethod<String>(constants.setPlayheadPosition, data);
   }
   
   @override
@@ -84,5 +84,10 @@ class NielsenFlutterPluginAndroid extends NielsenFlutterPluginPlatform {
   @override
   Future<String?> userOptOutURLString() {
     return methodChannel.invokeMethod<String>(constants.userOptOutURLString);
+  }
+  
+  @override
+  Future<String?> sendID3(String data) {
+    return methodChannel.invokeMethod<String>(constants.sendID3, data);
   }
 }
