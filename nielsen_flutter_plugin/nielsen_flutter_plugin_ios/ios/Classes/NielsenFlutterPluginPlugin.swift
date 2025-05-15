@@ -108,6 +108,14 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
               self.sdk = nil
           }
           
+      case "sendID3":
+          if let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) {
+              self.sdk?.sendID3(args)
+              if let result = result as FlutterResult? {
+                  result("sendID3 metadata called successfully ")
+              }
+          }
+
       default:
           result("iOS")
       }
