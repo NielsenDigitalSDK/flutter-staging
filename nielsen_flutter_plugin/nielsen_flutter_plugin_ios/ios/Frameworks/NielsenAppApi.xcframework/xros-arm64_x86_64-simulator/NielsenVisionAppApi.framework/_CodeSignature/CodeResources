@@ -22,51 +22,51 @@
 		</data>
 		<key>Headers/NielsenVisionAppApi-Swift.h</key>
 		<data>
-		D+S1IhPt4/OpBSONlNw2qp1X9Qg=
+		zZcYQ7AUKGQDC51GCj0cXaGzmow=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		C010Q/nF0zQIKOS6Es3nI5aV2fc=
+		kouczZZwJQ1PJ+IRHLT5UYvmFoY=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		kjYj3rLJl52hE7gOGIdBL8meVrg=
+		L3OJ5VWG2lDF+BsPpWzUHxJrbHA=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
-		EsgIf3sZ5Mrx0dIhR9Y7EGtXb7Y=
+		cD+7U8eYoZTvUiijZQGNJ6gidJ8=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftdoc</key>
 		<data>
-		lijUCpOMg34Fsy36I3+BgtSVlYw=
+		H1E/TODRaJJ88ss09BbDoOBdTIo=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftinterface</key>
 		<data>
-		EsgIf3sZ5Mrx0dIhR9Y7EGtXb7Y=
+		cD+7U8eYoZTvUiijZQGNJ6gidJ8=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		8PoCxP1ZNK3BAimeoW+BNnf9DhQ=
+		zof4pi/+GBjXy25JBl10h8Nw+u8=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		kjYj3rLJl52hE7gOGIdBL8meVrg=
+		L3OJ5VWG2lDF+BsPpWzUHxJrbHA=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
-		gx07gcYiY8+Yo3DtRREyy4JhyMY=
+		X3iKBhi9dd1x2On/mHyvAE4GjYw=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftdoc</key>
 		<data>
-		EtNVw/L1lXdZeE7qaLoHVjqQfZc=
+		aVFfRi6/eGwZurbXkFuUqq8itcA=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftinterface</key>
 		<data>
-		gx07gcYiY8+Yo3DtRREyy4JhyMY=
+		X3iKBhi9dd1x2On/mHyvAE4GjYw=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		LWeAXuW0+NcBNkx9U9BmQgiZuKY=
+		aVKRgiWt8VA2tWDh1WVlb+s+I6o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -82,11 +82,11 @@
 		</data>
 		<key>PrivateHeaders/NlsApiWorker.h</key>
 		<data>
-		Vyikm+FMWXuyIQEHwRFWZod9SLM=
+		yLmwld+J4SuUKgNvEph+g9UtKwU=
 		</data>
 		<key>PrivateHeaders/NlsBaseDataProcessor.h</key>
 		<data>
-		LZofUsF76WDapJJ+O/Ymds4R1e4=
+		5QkGwZeGCS7IZ5HCR7+Ro76eH6c=
 		</data>
 		<key>PrivateHeaders/NlsCache.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>PrivateHeaders/NlsID3Tag.h</key>
 		<data>
-		m75akEvfLW3O/tAIwuua+Dhzh38=
+		m0Tgjw2XPa+AvATzsHjjGfXbTuk=
 		</data>
 		<key>PrivateHeaders/NlsLogger.h</key>
 		<data>
@@ -183,77 +183,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g76v8yyMJpkx9jKqdLHUEoxgNyBK/qb16qvFRMENksw=
+			Kv0esHPt1+CKOSMbWxgVJNH5puoLd1XJyjXcouupUAk=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lqmvj0kcRCz+8FQaVOyMV5hWPxgo/M7X5KoRUGXFWso=
+			oLWM9WjswDMjFPq45R8DgvJKHeERV3NLL1SrmXMQKWk=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KIIvP0ZnH+tgUnZ6rb72hDPOm2K5z34g1BOSh+BwuXo=
+			s+rZaRZNdAftyVqqGb8N6rdWBsXfweNaoEpRK8WP9Mc=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u/Eyx8v/EUONKpjvi/3rHFZd+anlV12r2vms5OOX9K0=
+			J4eI1Uf8kemKKvO0xysIODbArSKJ3lHZYvyQIm78T5c=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KIIvP0ZnH+tgUnZ6rb72hDPOm2K5z34g1BOSh+BwuXo=
+			s+rZaRZNdAftyVqqGb8N6rdWBsXfweNaoEpRK8WP9Mc=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d330FjOLSdrlc1NI7HEph6IqLJYKAZ/rdAvR4GKijp4=
+			3s4BCuRL5b7rMwRg9fVwPToW/l6+rDJPd0+DC0ki7Zc=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lqmvj0kcRCz+8FQaVOyMV5hWPxgo/M7X5KoRUGXFWso=
+			oLWM9WjswDMjFPq45R8DgvJKHeERV3NLL1SrmXMQKWk=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vcjBRG9LCgTJfOUcTuQgiI6yI7zVKjEGaApGiXvPJ+8=
+			yjXk9JetJmOQIB4kLADBLPDPubC8pCm3QaGIvc+C//U=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			J5AgzE1/peuOQ0NIPzhgX0cGwFoo5SK1z1YDe0E/m3c=
+			/A8WIBzHsAdfHxHkVoVtCJSh9MpAJVTQ72yJpWNG85Y=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vcjBRG9LCgTJfOUcTuQgiI6yI7zVKjEGaApGiXvPJ+8=
+			yjXk9JetJmOQIB4kLADBLPDPubC8pCm3QaGIvc+C//U=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jZQZlfKoo18gbxd+WaQsHQzLIvqYPcmp4+taixUt094=
+			o9dWxYxaVBb5vSDmLo68V/kwruR+Pr7sRopnlogAtS0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -281,14 +281,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eqaSoT3tBP0NqqN05XMDqdr6ZckDG60Zg7t6Htuoa0A=
+			Nhhgc9rcnkgAJV3TlCt+zxM5UaKOfTIy1h0J+qSf63s=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NlsBaseDataProcessor.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nY2AFsUhAtpAybjcurbz9IiDbMTagKZzWcyO7TN73N4=
+			196lgaxH3geGn5hZ9fy/sM6B4AUqrxnCo03kdBIkFo8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NlsCache.h</key>
@@ -365,7 +365,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KpunxJlnDw4uXR75emZHEg+fXInI8VhFzjVRPgPuBvs=
+			fHpLbRA9Z8iomtetXXZxgK2A1yXrK1K3p+DfBVnXgVs=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NlsLogger.h</key>

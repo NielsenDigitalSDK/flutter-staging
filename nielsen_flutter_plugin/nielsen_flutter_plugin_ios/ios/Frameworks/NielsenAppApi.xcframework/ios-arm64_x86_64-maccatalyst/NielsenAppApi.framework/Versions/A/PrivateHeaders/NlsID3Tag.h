@@ -56,7 +56,8 @@ enum NIELSEN_TAG_FIELDS
 @property (nonatomic, readonly) BOOL isSessionPcCidChanged;
 @property (nonatomic, readonly) BOOL isSessionFdCidChanged;
 @property (nonatomic, readonly) BOOL isFdCidChanged;
-
+@property (nonatomic, readonly) BOOL isZeroPcCid;
+@property (nonatomic, readonly) BOOL isZeroFdCid;
 
 
 @property (nonatomic) BOOL enableForcePingMode;

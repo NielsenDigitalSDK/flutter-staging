@@ -169,6 +169,5 @@ typedef NS_ENUM(NSUInteger, NlsPingType) {
 + (NielsenProductType)processorTypeForProduct:(NSString*)product;
 - (void)logPingWithDuration:(int)duration;
 - (NSString *)parseFormattedString:(NSString *)formattedString;
-- (void)processChangeCollectorState:(NlsContentType)contentType;
 - (void)processOfflineFlushWithArrivalTime:(NSTimeInterval)arrivalTime;
 @end

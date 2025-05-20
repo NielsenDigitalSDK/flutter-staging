@@ -65,6 +65,7 @@ typedef NS_ENUM(unsigned int, NielsenApiType) {
 @property (strong, readonly) NlsTSVRequestManager *tsvRequestManager;
 @property (strong, readonly) NlsVaViewabilityStorage *viewabilityStorage;
 @property (strong, readonly) NlsVaViewabilityTracker *viewabilityTracker;
+@property (strong, readwrite, nonnull) NSDictionary *cmsMapping;
 
 @property (strong, readwrite) NSDictionary *appInfoDict;
 
