@@ -86,4 +86,24 @@ class MethodChannelNielsenFlutterPlugin extends NielsenFlutterPluginPlatform {
   Future<String?> sendID3(String data) {
     return methodChannel.invokeMethod<String>(constants.sendID3, data);
   }
+  
+  @override
+  Future<String?> getDemographicId() {
+    return methodChannel.invokeMethod<String>(constants.getDemographicId);
+  }
+  
+  @override
+  Future<String?> getDeviceId() {
+    return methodChannel.invokeMethod<String>(constants.getDeviceId);
+  }
+  
+  @override
+  Future<String?> getFpId() {
+    return methodChannel.invokeMethod<String>(constants.getFpId);
+  }
+  
+  @override
+  Future<String?> getVendorId() {
+    return methodChannel.invokeMethod<String>(constants.getVendorId);
+  }
 }

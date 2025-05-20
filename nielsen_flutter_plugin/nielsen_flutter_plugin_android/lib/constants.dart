@@ -27,3 +27,7 @@ const String getOptOutStatus = "getOptOutStatus";
 const String userOptOutURLString = "userOptOutURLString";
 const String getMeterVersion = "getMeterVersion";
 const String staticEnd = "staticEnd";
+
+const String getFpId = 'getFpId';
+const String getVendorId = 'getVendorId';
+const String getDeviceId = 'getDeviceId';

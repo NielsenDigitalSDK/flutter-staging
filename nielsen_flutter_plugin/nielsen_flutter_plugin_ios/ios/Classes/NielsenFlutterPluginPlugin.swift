@@ -193,7 +193,7 @@ extension NielsenFlutterPluginPlugin: FlutterStreamHandler {
         metadataOutput?.setDelegate(self, queue: DispatchQueue.main)
         playerItem?.add(metadataOutput!) // Add the metadata output
 
-        player?.play()
+//        player?.play()
         
     }
     
