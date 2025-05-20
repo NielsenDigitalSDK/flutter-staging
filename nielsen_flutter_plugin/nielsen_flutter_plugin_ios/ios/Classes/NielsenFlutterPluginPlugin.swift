@@ -103,36 +103,6 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
               
           }
           
-      case "getFpId":
-          if self.sdk?.responds(to: Selector(("firstPartyId"))) {
-              let fpId = self.sdk?.perform(Selector(("firstPartyId")))?.takeUnretainedValue() as! String
-              if let result = result as FlutterResult? {
-                  result(fpId)
-              }
-
-          }
-          else {
-              if let result = result as FlutterResult? {
-                  result = "FirstParty ID: N/A";
-              }
-              
-          }
-          
-          
-      case "getVendorId":
-          if self.sdk?.responds(to: Selector(("vendorId"))) {
-              let vendorID = self.sdk?.perform(Selector(("vendorId")))?.takeUnretainedValue() as! String
-              if let result = result as FlutterResult? {
-                  result(vendorID)
-              }
-
-          }
-          else {
-              if let result = result as FlutterResult? {
-                  result = "Vendor ID: N/A";
-              }
-              
-          }
           
       case "getDeviceId":
           let deviceId = self.sdk?.deviceId()
