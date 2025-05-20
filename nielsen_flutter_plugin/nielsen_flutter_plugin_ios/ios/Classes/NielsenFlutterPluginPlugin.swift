@@ -97,19 +97,11 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
           }
           
       case "getDeviceId":
-          let meterVersion = self.sdk?.meterVersion as String?
-          if let result = result as FlutterResult? {
-              result(meterVersion)
-              
-          }
-          
-          
-      case "getDeviceId":
-          let deviceId = self.sdk?.deviceId()
+          let deviceId = self.sdk?.deviceId as String?
           if let result = result as FlutterResult? {
               result(deviceId)
+              
           }
-
 
           
       case "staticEnd":
