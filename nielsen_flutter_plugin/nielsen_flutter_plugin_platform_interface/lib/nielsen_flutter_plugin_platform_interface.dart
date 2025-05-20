@@ -49,10 +49,10 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
   Future<String?> getMeterVersion();
   Future<String?> staticEnd();
   Future<String?> free();
-  Future<String?> getDemographicId(String data);
-  Future<String?> getFpId(String data);
-  Future<String?> getVendorId(String data);
-  Future<String?> getDeviceId(String data);
+  Future<String?> getDemographicId();
+  Future<String?> getFpId();
+  Future<String?> getVendorId();
+  Future<String?> getDeviceId();
 
   Future<String?> sendID3(String data);
 
