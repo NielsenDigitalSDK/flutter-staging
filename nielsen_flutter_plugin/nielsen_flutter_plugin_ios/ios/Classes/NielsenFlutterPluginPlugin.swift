@@ -2,13 +2,16 @@ import Flutter
 import UIKit
 import NielsenAppApi
 public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
-    var sdk: NielsenAppApi?
+//    var sdk: NielsenAppApi?
     var eventSink: FlutterEventSink?
 
     private var player: AVPlayer?
     private var playerItem: AVPlayerItem?
     private var asset: AVAsset?
     private var metadataOutput: AVPlayerItemMetadataOutput?
+    
+    private var nlsSDKs: [String:NielsenAppApi]? = [:]
+    private var sdkIdForSendID3: String? = nil
     
     public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "nielsen_flutter_plugin_ios", binaryMessenger: registrar.messenger())
@@ -24,15 +27,28 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
       switch call.method {
       case "createInstance":
           if let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) {
-              self.sdk = NielsenAppApi(appInfo:convertedObject, delegate:nil)
+              var bridgedInfo = convertedObject
+              let sdk_id: String = String(format: "%lli", CUnsignedLongLong(Date().timeIntervalSince1970 * 1000))
+              print("sdk instances before sdk init \(self.nlsSDKs)")
+              bridgedInfo["nol_playerid"] = sdk_id
+              let sdk = NielsenAppApi(appInfo:bridgedInfo, delegate:nil)
+              if sdk != nil {
+                  self.nlsSDKs?[sdk_id] = sdk
+              }
+              print("sdk instances \(self.nlsSDKs)")
               if let result = result as FlutterResult? {
-                  result("created app sdk instance")
+                  result(sdk_id)
               }
           }
           
       case "loadMetadata":
           if let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) {
-              self.sdk?.loadMetadata(convertedObject)
+              if let sdkId = convertedObject["sdkId"] as? String, let metadata = convertedObject["metadata"] as? [String: Any] {
+                  if let sdk = self.nlsSDKs, sdk[sdkId] != nil {
+                      sdk[sdkId]?.loadMetadata(metadata)
+                  }
+              }
+                            
               if let result = result as FlutterResult? {
                   result("load metadata called successfully ")
               }
@@ -40,7 +56,11 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
           
       case "play":
           if let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) {
-              self.sdk?.play(convertedObject)
+              if let sdkId = convertedObject["sdkId"] as? String, let playData = convertedObject["playdata"] as? [String: Any] {
+                  if let sdk = self.nlsSDKs, sdk[sdkId] != nil {
+                      sdk[sdkId]?.play(playData)
+                  }
+              }
               if let result = result as FlutterResult? {
                   result("play called successfully")
                   
@@ -48,80 +68,115 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
           }
           
       case "stop":
-          self.sdk?.stop()
+          if let args = call.arguments as? String,let convertedObject = self.jsonStringToDictionary(jsonString: args), let sdkId = convertedObject["sdkId"] as? String {
+              if let sdk = self.nlsSDKs, sdk[sdkId] != nil {
+                  sdk[sdkId]?.stop()
+              }
+          }
+                    
           if let result = result as FlutterResult? {
               result("Stop API called successfully")
           }
           
       case "end":
-          self.sdk?.end()
+          if let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args), let sdkId = convertedObject["sdkId"] as? String {
+              if let sdk = self.nlsSDKs, sdk[sdkId] != nil {
+                  sdk[sdkId]?.end()
+              }
+          }
+
           if let result = result as FlutterResult? {
               result("End API called successfully")
           }
           
       case "setPlayheadPosition":
-          guard let args = call.arguments as? String else { return }
-          if let ph = Int(args) {
-              self.sdk?.playheadPosition(Int64(ph))
-              if let result = result as FlutterResult? {
-                  result("\(ph)")
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
+          if let sdkId = convertedObject["sdkId"] as? String, let playhead = convertedObject["position"] as? String {
+              if let sdk = self.nlsSDKs, sdk[sdkId] != nil, let ph = Int64(playhead) {
+                  sdk[sdkId]?.playheadPosition(ph)
+                  if let result = result as FlutterResult? {
+                      result("\(ph)")
+                  }
               }
+              
           }
           
       case "getDemographicId":
-          let demographicId = self.sdk?.demographicId as String?
-          if let result = result as FlutterResult?, let demoId = demographicId {
-              result(demoId)
-              
-          }
-          
-      case "getOptOutStatus":
-          guard let sdk = self.sdk else { return }
-          let optoutStatus = sdk.optOutStatus ? "true" : "false"
-          if let result = result as FlutterResult? {
-              result(optoutStatus)
-          }
-          
-      case "userOptOutURLString":
-          let userOptOutURLString = self.sdk?.optOutURL as String?
-          if let result = result as FlutterResult? {
-              result(userOptOutURLString)
-              
-          }
-          
-      case "getMeterVersion":
-          let meterVersion = self.sdk?.meterVersion as String?
-          if let result = result as FlutterResult? {
-              result(meterVersion)
-              
-          }
-          
-      case "getDeviceId":
-          let deviceId = self.sdk?.deviceId as String?
-          if let result = result as FlutterResult? {
-              result(deviceId)
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
+          if let sdkId = convertedObject["sdkId"] as? String {
+              if let sdk = self.nlsSDKs, sdk[sdkId] != nil{
+                  let demographicId = sdk[sdkId]?.demographicId as String?
+                  if let result = result as FlutterResult?, let demoId = demographicId {
+                      result("\(demoId)")
+                  }
+              }
               
           }
 
           
-      case "staticEnd":
-          self.sdk?.staticEnd()
-          if let result = result as FlutterResult? {
-              result("static end API called succesfully")
-              
+      case "getOptOutStatus":
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
+          if let sdkId = convertedObject["sdkId"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil {
+              if let optoutStatus = sdk[sdkId]?.optOutStatus {
+                    if let result = result as FlutterResult? {
+                        result(optoutStatus ? "true" : "false")
+                    }
+              }
+          }
+                    
+      case "userOptOutURLString":
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
+          if let sdkId = convertedObject["sdkId"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil, let optOutURL = sdk[sdkId]?.optOutURL {
+                    if let result = result as FlutterResult? {
+                        result(optOutURL)
+                    }
           }
           
+      case "getMeterVersion":
+          print("call. args \(call.arguments)")
+          print("all sdks \(nlsSDKs)")
+          guard let args = call.arguments as? String,
+                let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return result("data not available")}
+          if let sdkId = convertedObject["sdkId"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil, let meterVersion = sdk[sdkId]?.meterVersion {
+                    if let result = result as FlutterResult? {
+                        result(meterVersion)
+                    }
+          }
+
+          
+      case "getDeviceId":
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
+          if let sdkId = convertedObject["sdkId"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil, let deviceId = sdk[sdkId]?.deviceId {
+                    if let result = result as FlutterResult? {
+                        result(deviceId)
+                    }
+          }
+
+
+          
+      case "staticEnd":
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return result("N/A") }
+          if let sdkId = convertedObject["sdkId"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil {
+              sdk[sdkId]?.staticEnd()
+                if let result = result as FlutterResult? {
+                    result("static end API called succesfully")
+                }
+          }
+
       case "free":
-          if self.sdk != nil {
-              self.sdk = nil
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
+          if let sdkId = convertedObject["sdkId"] as? String, var sdk = self.nlsSDKs, sdk[sdkId] != nil {
+              sdk[sdkId] = nil
+                
           }
           
       case "sendID3":
-          if let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) {
-              self.sdk?.sendID3(args)
-              if let result = result as FlutterResult? {
-                  result("sendID3 metadata called successfully ")
-              }
+          guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
+          if let sdkId = convertedObject["sdkId"] as? String, let id3 = convertedObject["sendID3"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil {
+              sdk[sdkId]?.sendID3(id3)
+                if let result = result as FlutterResult? {
+                    result("sendID3 metadata called successfully")
+                }
           }
 
       default:
@@ -169,8 +224,10 @@ extension NielsenFlutterPluginPlugin: AVPlayerItemMetadataOutputPushDelegate {
             for item in group.items {
                 if let identifier = item.identifier?.rawValue, let value = item.value(forKey: "value") {
                     if let id3Data = item.extraAttributes?[AVMetadataExtraAttributeKey.info] as? String {
-                        print("[SDK] SendID3: \(id3Data)")
-                        self.sdk?.sendID3(id3Data)
+                        if let sdkId = self.sdkIdForSendID3, let sdk = self.nlsSDKs?[sdkId] {
+                            print("[NielsenFlutterPlugin] SendID3: \(id3Data)")
+                            sdk.sendID3(id3Data)
+                        }
                     }
                 }
             }
@@ -180,9 +237,12 @@ extension NielsenFlutterPluginPlugin: AVPlayerItemMetadataOutputPushDelegate {
 
 extension NielsenFlutterPluginPlugin: FlutterStreamHandler {
     public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
+        guard let arguments = arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: arguments) else { return nil }
         self.eventSink = events
-        let urlString = arguments as! String
-        startPlaybackWithTimedMetadata(url: urlString)
+        sdkIdForSendID3 = convertedObject["sdkId"] as? String
+        if let urlString = convertedObject["url"] as? String {
+            startPlaybackWithTimedMetadata(url: urlString)
+        }
         return nil
     }
     
@@ -201,7 +261,7 @@ extension NielsenFlutterPluginPlugin: FlutterStreamHandler {
         metadataOutput?.setDelegate(self, queue: DispatchQueue.main)
         playerItem?.add(metadataOutput!) // Add the metadata output
 
-//        player?.play()
+        player?.play()
         
     }
     

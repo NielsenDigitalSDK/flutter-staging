@@ -33,22 +33,22 @@ class MethodChannelNielsenFlutterPlugin extends NielsenFlutterPluginPlatform {
   }
   
   @override
-  Future<String?> end() {
+  Future<String?> end(String data) {
     return methodChannel.invokeMethod<String>(constants.end);
   }
   
   @override
-  Future<String?> free() {
+  Future<String?> free(String data) {
     return methodChannel.invokeMethod<String>(constants.free);
   }
   
   @override
-  Future<String?> getMeterVersion() {
+  Future<String?> getMeterVersion(String data) {
     return methodChannel.invokeMethod<String>(constants.getMeterVersion);
   }
   
   @override
-  Future<String?> getOptOutStatus() {
+  Future<String?> getOptOutStatus(String data) {
     return methodChannel.invokeMethod<String>(constants.getOptOutStatus);
   }
   
@@ -68,17 +68,17 @@ class MethodChannelNielsenFlutterPlugin extends NielsenFlutterPluginPlatform {
   }
   
   @override
-  Future<String?> staticEnd() {
+  Future<String?> staticEnd(String data) {
     return methodChannel.invokeMethod<String>(constants.staticEnd);
   }
   
   @override
-  Future<String?> stop() {
+  Future<String?> stop(String data) {
     return methodChannel.invokeMethod<String>(constants.stop);
   }
   
   @override
-  Future<String?> userOptOutURLString() {
+  Future<String?> userOptOutURLString(String data) {
     return methodChannel.invokeMethod<String>(constants.userOptOutURLString);
   }
   
@@ -88,22 +88,22 @@ class MethodChannelNielsenFlutterPlugin extends NielsenFlutterPluginPlatform {
   }
   
   @override
-  Future<String?> getDemographicId() {
+  Future<String?> getDemographicId(String data) {
     return methodChannel.invokeMethod<String>(constants.getDemographicId);
   }
   
   @override
-  Future<String?> getDeviceId() {
+  Future<String?> getDeviceId(String data) {
     return methodChannel.invokeMethod<String>(constants.getDeviceId);
   }
   
   @override
-  Future<String?> getFpId() {
+  Future<String?> getFpId(String data) {
     return methodChannel.invokeMethod<String>(constants.getFpId);
   }
   
   @override
-  Future<String?> getVendorId() {
+  Future<String?> getVendorId(String data) {
     return methodChannel.invokeMethod<String>(constants.getVendorId);
   }
 }

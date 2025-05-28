@@ -41,18 +41,18 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
   Future<String?> createInstance(String data);
   Future<String?> loadMetadata(String data);
   Future<String?> play(String data);
-  Future<String?> stop();
-  Future<String?> end();
+  Future<String?> stop(String data);
+  Future<String?> end(String data);
   Future<String?> setPlayheadPosition(String data);
-  Future<String?> getOptOutStatus();
-  Future<String?> userOptOutURLString();
-  Future<String?> getMeterVersion();
-  Future<String?> staticEnd();
-  Future<String?> free();
-  Future<String?> getDemographicId();
-  Future<String?> getFpId();
-  Future<String?> getVendorId();
-  Future<String?> getDeviceId();
+  Future<String?> getOptOutStatus(String data);
+  Future<String?> userOptOutURLString(String data);
+  Future<String?> getMeterVersion(String data);
+  Future<String?> staticEnd(String data);
+  Future<String?> free(String data);
+  Future<String?> getDemographicId(String data);
+  Future<String?> getFpId(String data);
+  Future<String?> getVendorId(String data);
+  Future<String?> getDeviceId(String data);
 
   Future<String?> sendID3(String data);
 
