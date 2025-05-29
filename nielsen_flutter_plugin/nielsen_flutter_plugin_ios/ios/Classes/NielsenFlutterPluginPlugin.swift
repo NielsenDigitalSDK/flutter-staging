@@ -68,6 +68,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
           }
           
       case "stop":
+          player?.pause()
           if let args = call.arguments as? String,let convertedObject = self.jsonStringToDictionary(jsonString: args), let sdkId = convertedObject["sdkId"] as? String {
               if let sdk = self.nlsSDKs, sdk[sdkId] != nil {
                   sdk[sdkId]?.stop()
@@ -138,18 +139,18 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
           guard let args = call.arguments as? String,
                 let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return result("data not available")}
           if let sdkId = convertedObject["sdkId"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil, let meterVersion = sdk[sdkId]?.meterVersion {
-                    if let result = result as FlutterResult? {
-                        result(meterVersion)
-                    }
+            if let result = result as FlutterResult? {
+                result(meterVersion)
+            }
           }
 
           
       case "getDeviceId":
           guard let args = call.arguments as? String, let convertedObject = self.jsonStringToDictionary(jsonString: args) else { return }
           if let sdkId = convertedObject["sdkId"] as? String, let sdk = self.nlsSDKs, sdk[sdkId] != nil, let deviceId = sdk[sdkId]?.deviceId {
-                    if let result = result as FlutterResult? {
-                        result(deviceId)
-                    }
+                if let result = result as FlutterResult? {
+                    result(deviceId)
+                }
           }
 
 

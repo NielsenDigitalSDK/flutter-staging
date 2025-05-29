@@ -42,22 +42,22 @@ class NielsenFlutterPluginIOS extends NielsenFlutterPluginPlatform {
   
   @override
   Future<String?> end(String data) {
-    return methodChannel.invokeMethod<String>(constants.end);
+    return methodChannel.invokeMethod<String>(constants.end,data);
   }
   
   @override
   Future<String?> free(String data) {
-    return methodChannel.invokeMethod<String>(constants.free);
+    return methodChannel.invokeMethod<String>(constants.free,data);
   }
   
   @override
   Future<String?> getMeterVersion(String data) {
-    return methodChannel.invokeMethod<String>(constants.getMeterVersion);
+    return methodChannel.invokeMethod<String>(constants.getMeterVersion,data);
   }
   
   @override
   Future<String?> getOptOutStatus(String data) {
-    return methodChannel.invokeMethod<String>(constants.getOptOutStatus);
+    return methodChannel.invokeMethod<String>(constants.getOptOutStatus,data);
   }
   
   @override
@@ -77,17 +77,17 @@ class NielsenFlutterPluginIOS extends NielsenFlutterPluginPlatform {
   
   @override
   Future<String?> staticEnd(String data) {
-    return methodChannel.invokeMethod<String>(constants.staticEnd);
+    return methodChannel.invokeMethod<String>(constants.staticEnd,data);
   }
   
   @override
   Future<String?> stop(String data) {
-    return methodChannel.invokeMethod<String>(constants.stop);
+    return methodChannel.invokeMethod<String>(constants.stop,data);
   }
   
   @override
   Future<String?> userOptOutURLString(String data) {
-    return methodChannel.invokeMethod<String>(constants.userOptOutURLString);
+    return methodChannel.invokeMethod<String>(constants.userOptOutURLString,data);
   }
   
   @override
@@ -97,22 +97,22 @@ class NielsenFlutterPluginIOS extends NielsenFlutterPluginPlatform {
   
   @override
   Future<String?> getDemographicId(String data) {
-    return methodChannel.invokeMethod<String>(constants.getDemographicId);
+    return methodChannel.invokeMethod<String>(constants.getDemographicId,data);
   }
   
   @override
   Future<String?> getDeviceId(String data) {
-    return methodChannel.invokeMethod<String>(constants.getDeviceId);
+    return methodChannel.invokeMethod<String>(constants.getDeviceId,data);
   }
   
   @override
   Future<String?> getFpId(String data) {
-    return methodChannel.invokeMethod<String>(constants.getFpId);
+    return methodChannel.invokeMethod<String>(constants.getFpId,data);
   }
   
   @override
   Future<String?> getVendorId(String data) {
-    return methodChannel.invokeMethod<String>(constants.getVendorId);
+    return methodChannel.invokeMethod<String>(constants.getVendorId,data);
   }
 
   
