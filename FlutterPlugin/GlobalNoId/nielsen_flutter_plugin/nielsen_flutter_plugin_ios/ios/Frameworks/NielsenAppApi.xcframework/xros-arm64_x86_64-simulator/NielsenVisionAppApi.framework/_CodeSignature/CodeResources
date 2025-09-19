@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		B/is6bF8+ERaf9b1qi40tWaPspo=
+		8v/fWo2PgkayfRdY9Od8nTEqdVI=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		G8jz/XugTY7tkA4jm/eexNnFYLc=
+		tt0JewaFtEM4qQ2Lcx58lHFBqXg=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		B/is6bF8+ERaf9b1qi40tWaPspo=
+		8v/fWo2PgkayfRdY9Od8nTEqdVI=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		ncJaB3ExgJ3RSXC3APzZxyTsAc8=
+		iOGSZ7GRuct/Y1ZZRoMISg7Wjoo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -190,7 +190,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MAUkwo6cDf8CsuulKkjUrFRSr6nLxHfPeMBRYuVGsaw=
+			4fZBs85v7z9PztMomAH9B6MHhe0ynU1NHKrb24KBIQI=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
@@ -218,14 +218,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ePhX4wadtDFs9C2wTOLpJlRM3W5+6kkR7WN+LYtF1ds=
+			D5K/IRIR68iF9ZyAmckhytEn9RpM0xwM+/BS25cUk9M=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MAUkwo6cDf8CsuulKkjUrFRSr6nLxHfPeMBRYuVGsaw=
+			4fZBs85v7z9PztMomAH9B6MHhe0ynU1NHKrb24KBIQI=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
@@ -253,7 +253,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q2+MFlPClX7dGuAenx4j00wNmx+HfcV5RNtmtxlV+ls=
+			TGj4TlJXx7NuQz6tzm+5iXmQYJwQpU552KfRE+AeFGQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
