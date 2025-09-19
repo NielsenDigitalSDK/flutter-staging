@@ -1,0 +1,144 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:nielsen_flutter_plugin_platform_interface/nielsen_flutter_plugin_platform_interface.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+
+class MockNielsenFlutterPluginPlatform extends Mock
+    with MockPlatformInterfaceMixin
+    implements NielsenFlutterPluginPlatform {
+  @override
+  Future<String?> createInstance(String data) {
+    // TODO: implement createInstance
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> end(String data) {
+    // TODO: implement end
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> free(String data) {
+    // TODO: implement free
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getDemographicId(String data) {
+    // TODO: implement getDemographicId
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getDeviceId(String data) {
+    // TODO: implement getDeviceId
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getFpId(String data) {
+    // TODO: implement getFpId
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getMeterVersion(String data) {
+    // TODO: implement getMeterVersion
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getOptOutStatus(String data) {
+    // TODO: implement getOptOutStatus
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getVendorId(String data) {
+    // TODO: implement getVendorId
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> loadMetadata(String data) {
+    // TODO: implement loadMetadata
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> play(String data) {
+    // TODO: implement play
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> sendID3(String data) {
+    // TODO: implement sendID3
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> setPlayheadPosition(String data) {
+    // TODO: implement setPlayheadPosition
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> staticEnd(String data) {
+    // TODO: implement staticEnd
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> stop(String data) {
+    // TODO: implement stop
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> userOptOutURLString(String data) {
+    // TODO: implement userOptOutURLString
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getPlatformName() {
+    // TODO: implement getPlatformName
+    throw UnimplementedError();
+  }
+}
+
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  group('NielsenFlutterPlugin', () {
+    late NielsenFlutterPluginPlatform nielsenFlutterPluginPlatform;
+
+    setUp(() {
+      nielsenFlutterPluginPlatform = MockNielsenFlutterPluginPlatform();
+      NielsenFlutterPluginPlatform.instance = nielsenFlutterPluginPlatform;
+    });
+
+    // group('getPlatformName', () {
+    //   test('returns correct name when platform implementation exists',
+    //       () async {
+    //     const platformName = '__test_platform__';
+    //     when(
+    //       () => nielsenFlutterPluginPlatform.getPlatformName(),
+    //     ).thenAnswer((_) async => platformName);
+
+    //     final actualPlatformName = await getPlatformName();
+    //     expect(actualPlatformName, equals(platformName));
+    //   });
+
+    //   test('throws exception when platform implementation is missing',
+    //       () async {
+    //     when(
+    //       () => nielsenFlutterPluginPlatform.getPlatformName(),
+    //     ).thenAnswer((_) async => null);
+
+    //     expect(getPlatformName, throwsException);
+    //   });
+    // });
+  });
+}
