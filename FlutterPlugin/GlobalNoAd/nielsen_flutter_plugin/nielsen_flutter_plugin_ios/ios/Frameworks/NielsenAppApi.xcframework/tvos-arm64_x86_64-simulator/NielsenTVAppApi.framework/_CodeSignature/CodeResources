@@ -26,11 +26,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SdJI6uh/ij7DHa10LFi0RG2IWCU=
+		Vtl2LCv4JYcR54q86QyM/xMvd88=
 		</data>
 		<key>Modules/NielsenTVAppApi.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		38Z49ZW2W6/gHFGYEAMCvO3eiDY=
+		XY2a6wahQ/z++wMw3chYafXvc9o=
 		</data>
 		<key>Modules/NielsenTVAppApi.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/NielsenTVAppApi.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		d38yFBEAgy2yV//foswVmRCUJMI=
+		M7Boj8USdV412w4dQFkUbbeE0uo=
 		</data>
 		<key>Modules/NielsenTVAppApi.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		38Z49ZW2W6/gHFGYEAMCvO3eiDY=
+		XY2a6wahQ/z++wMw3chYafXvc9o=
 		</data>
 		<key>Modules/NielsenTVAppApi.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/NielsenTVAppApi.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		iW7IUr7rx1vMD7DSrQtX8tgtKgo=
+		NdfXhawbZCBajeZDz0zmdF6rDEY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -186,7 +186,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JzCf4zzdvQesYAODgljUQyiV8wputrJ1ugOe6SKld0E=
+			11hXR8Gcq+lzvv7nq1rMM/Bbg2Ere5a/IrjOOIASWhA=
 			</data>
 		</dict>
 		<key>Modules/NielsenTVAppApi.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
@@ -214,14 +214,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ciUsoSkr3NQO7yDw2xbZLceZT52h2TeeFGxN0GhWheQ=
+			PbBTX9Juu4iPftIIh+uHRb/fhke6d85b2Ypio/LiSzA=
 			</data>
 		</dict>
 		<key>Modules/NielsenTVAppApi.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JzCf4zzdvQesYAODgljUQyiV8wputrJ1ugOe6SKld0E=
+			11hXR8Gcq+lzvv7nq1rMM/Bbg2Ere5a/IrjOOIASWhA=
 			</data>
 		</dict>
 		<key>Modules/NielsenTVAppApi.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
@@ -249,7 +249,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LrICgNJRAp5LcQy5LIURov2jLYThXgSGoxZ98oNoHKM=
+			2Ski1fr0arhSjHMbXNrxktKtM2Pes9yxhHIIWVOxU24=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
