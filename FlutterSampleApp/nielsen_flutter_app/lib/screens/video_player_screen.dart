@@ -12,7 +12,7 @@ import 'package:nielsen_flutter_app/models/static_data.dart';
 import 'package:nielsen_flutter_app/models/static_metadata.dart';
 
 import 'package:video_player/video_player.dart';
-import 'package:nielsen_flutter_plugin_platform_interface/nielsen_flutter_plugin_platform_interface.dart';
+import 'package:nielsen_flutter_plugin/nielsen_flutter_plugin.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
   const VideoPlayerScreen({super.key});
@@ -23,6 +23,12 @@ class VideoPlayerScreen extends StatefulWidget {
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen>
     with WidgetsBindingObserver {
+  // Singleton instance of the Nielsen plugin
+  final nielsen = NielsenFlutterPlugin.instance;
+  String? sdk_id;
+  String? static_sdk_id;
+  String? dtvr_sdk_id;
+
   AppConfig? _appConfig; // Uses your AppConfig model
   int _currentVideoIndex = 0;
   late VideoPlayerController _controller;
@@ -40,9 +46,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
   StaticMetadata? optoutMetadata;
   StaticMetadata? homeMetadata;
   static const EventChannel _channel = EventChannel('id3_timed_metadata');
-  String? sdk_id;
-  String? static_sdk_id;
-  String? dtvr_sdk_id;
 
   var appInfo =
       (Platform.isAndroid)
@@ -101,6 +104,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
   @override
   initState() {
     super.initState();
+    // Enable Nielsen SDK for debugging
+    nielsen.enableDebugLogs(true);
     currentScreen = CurrentScreen.home.toString();
     // currentPage = CurrentScreen.home;
     WidgetsBinding.instance.addObserver(this);
@@ -118,44 +123,29 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
       case AppLifecycleState.resumed:
         homeMetadata = _appConfig?.staticData?.home?.metadata;
         optoutMetadata = _appConfig?.staticData?.optout?.metadata;
-        var metadata = {
-          'metadata':
-              currentScreen == CurrentScreen.home.toString()
-                  ? homeMetadata
-                  : optoutMetadata,
-          'sdkId': static_sdk_id,
-        };
+        var metadata =
+            currentScreen == CurrentScreen.home.toString()
+                ? homeMetadata
+                : optoutMetadata;
 
-        String? staticMetadata = await NielsenFlutterPluginPlatform.instance
-            .loadMetadata(jsonEncode(metadata));
-        print("reloaded data when app is coming to foreground $staticMetadata");
-        // e.g., resume animations, refresh data
+        await nielsen.loadMetadata(
+          static_sdk_id ?? "",
+          metadata?.toJson() ?? {},
+        );
         break;
       case AppLifecycleState.inactive:
-        print("App is in inactive state (partially obscured)");
-        // e.g., pause animations
         break;
       case AppLifecycleState.paused:
         if (_controller.value.isPlaying) {
           _controller.pause();
         }
-        if (sdk_id != null) {
-          handleStopOnPause(sdk_id!);
-        }
+        handleStopOnPause(sdk_id ?? "");
 
-        String? staticEndData = await NielsenFlutterPluginPlatform.instance
-            .staticEnd(jsonEncode({'sdkId': static_sdk_id}));
-        print(
-          "sdk instance static flush on background returned ${staticEndData.toString()}",
-        );
+        await nielsen.staticEnd(static_sdk_id ?? "");
         break;
       case AppLifecycleState.hidden:
-        print("App is in hidden state (not visible)");
-        // e.g., stop resource-intensive tasks
         break;
       case AppLifecycleState.detached:
-        print("App is in detached state");
-        // e.g., perform cleanup before app exit
         break;
     }
   }
@@ -180,28 +170,22 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
         _appConfig = AppConfig.fromJson(jsonResponse);
         if (_appConfig!.channels.isNotEmpty) {
           if (static_sdk_id == null) {
-            String? sdkId = await NielsenFlutterPluginPlatform.instance
-                .createInstance(jsonEncode(staticAppInfo));
+            String? sdkId = await nielsen.createInstance(staticAppInfo);
             static_sdk_id = sdkId;
           }
 
           await Future.delayed(const Duration(seconds: 2));
           homeMetadata = _appConfig?.staticData?.home?.metadata;
           optoutMetadata = _appConfig?.staticData?.optout?.metadata;
-          var metadata = {'metadata': homeMetadata, 'sdkId': static_sdk_id};
-          var staticMetadata = await NielsenFlutterPluginPlatform.instance
-              .loadMetadata(jsonEncode(metadata));
-          print(
-            "sdk instance call returned for metadata ${staticMetadata.toString()}",
+          await nielsen.loadMetadata(
+            static_sdk_id ?? "",
+            homeMetadata?.toJson() ?? {},
           );
 
-          sdk_id ??= await NielsenFlutterPluginPlatform.instance.createInstance(
-            jsonEncode(appInfo),
-          );
+          sdk_id ??= await nielsen.createInstance(appInfo);
           await Future.delayed(const Duration(seconds: 2));
           _playVideo(_currentVideoIndex, isInitialLoad: true);
         } else {
-          print("AppConfig loaded but channels list is empty.");
           _initializeVideoPlayerFuture = Future.value();
         }
       }
@@ -273,8 +257,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
           if (!mounted) return;
           _controller.play();
 
-          dtvr_sdk_id ??= await NielsenFlutterPluginPlatform.instance
-              .createInstance(jsonEncode(appInfo));
+          dtvr_sdk_id ??= await nielsen.createInstance(appInfo);
           Future.delayed(Duration(milliseconds: 500), () {
             var sendID3Data = {'url': channelUrl, 'sdkId': dtvr_sdk_id};
             _channel.receiveBroadcastStream(jsonEncode(sendID3Data)).listen((
@@ -290,27 +273,15 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
 
           final channelInfo = _appConfig?.channels[index].channelInfo;
           final metadata = _appConfig?.channels[index].metadata;
-          var play = {'playdata': channelInfo, 'sdkId': sdk_id};
 
-          var playDtvr = {'playdata': channelInfo, 'sdkId': dtvr_sdk_id};
+          if (dtvr_sdk_id != null) {
+            await nielsen.play(dtvr_sdk_id!, channelInfo?.toJson() ?? {});
 
-          var channelMetadata = {'metadata': metadata, 'sdkId': sdk_id};
+            await nielsen.loadMetadata(dtvr_sdk_id!, metadata?.toJson() ?? {});
 
-          print("metadata for play dcr $play");
-          var playData = await NielsenFlutterPluginPlatform.instance.play(
-            jsonEncode(play),
-          );
-          print("sdk instance play call returned $playData");
-
-          var contentMetadata = await NielsenFlutterPluginPlatform.instance
-              .loadMetadata(jsonEncode(channelMetadata));
-          print("sdk instance content metadata call returned $contentMetadata");
-
-          // play for dtvr
-          var playDTVRData = await NielsenFlutterPluginPlatform.instance.play(
-            jsonEncode(playDtvr),
-          );
-          print("sdk instance playDTVRData call returned $playDTVRData");
+            // play for dtvr
+            await nielsen.play(dtvr_sdk_id!, channelInfo?.toJson() ?? {});
+          }
 
           if (mounted) {
             setState(() {});
@@ -342,34 +313,21 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
 
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (Timer t) async {
-      var dict = {
-        'position': _controller.value.position.inSeconds.toString(),
-        'sdkId': sdk_id,
-      };
       if (_controller.value.isInitialized && _controller.value.isPlaying) {
-        final String? playheadData = await NielsenFlutterPluginPlatform.instance
-            .setPlayheadPosition(jsonEncode(dict));
-        print("sdk instance playhead call returned: $playheadData");
-      } else if (_controller.value.isCompleted) {
-        final String? playheadData = await NielsenFlutterPluginPlatform.instance
-            .setPlayheadPosition(jsonEncode(dict));
-        print("last playhead call returned: $playheadData");
-
-        final String? endDataOnCompletion = await NielsenFlutterPluginPlatform
-            .instance
-            .end(jsonEncode({'sdkId': sdk_id}));
-        print(
-          "sdk instance end call returned on video completion: $endDataOnCompletion",
+        await nielsen.setPlayheadPosition(
+          sdk_id ?? "",
+          _controller.value.position.inSeconds,
         );
+      } else if (_controller.value.isCompleted) {
+        await nielsen.setPlayheadPosition(
+          sdk_id ?? "",
+          _controller.value.position.inSeconds,
+        );
+
+        await nielsen.end(sdk_id ?? "");
 
         // end for dtvr instance
-        final String? endDataOnDTVRCompletion =
-            await NielsenFlutterPluginPlatform.instance.end(
-              jsonEncode({'sdkId': dtvr_sdk_id}),
-            );
-        print(
-          "sdk instance end call returned on video completion for DTVR: $endDataOnDTVRCompletion",
-        );
+        await nielsen.end(dtvr_sdk_id ?? "");
 
         _stopTimer();
       }
@@ -432,17 +390,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
   }
 
   _endCallForCurrentStream() async {
-    if (sdk_id != null) {
-      var endData = await NielsenFlutterPluginPlatform.instance.end(
-        jsonEncode({"sdkId": sdk_id}),
-      );
-      print("sdk instance end call returned for during next playy $endData");
-    }
+    await nielsen.end(sdk_id ?? "");
 
     // end call for dtvr
-    if (dtvr_sdk_id != null) {
-      handleStopOnPause(dtvr_sdk_id!);
-    }
+    handleStopOnPause(dtvr_sdk_id ?? "");
   }
 
   String _formatDuration(Duration duration) {
@@ -457,12 +408,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
 
   // handle stop api
   handleStopOnPause(String sdkID) async {
-    var stopData = {'sdkId': sdkID};
-
-    var stopCallResult = await NielsenFlutterPluginPlatform.instance.stop(
-      jsonEncode(stopData),
-    );
-    print("Stop callled for $stopData and result $stopCallResult");
+    await nielsen.stop(sdkID);
   }
 
   @override
@@ -608,26 +554,15 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
                     setState(() {
                       _controller.pause();
                     });
-                    if (sdk_id != null) {
-                      await handleStopOnPause(sdk_id!);
-                    }
-                    if (dtvr_sdk_id != null) {
-                      await handleStopOnPause(dtvr_sdk_id!);
-                    }
+                    await handleStopOnPause(sdk_id ?? "");
+                    await handleStopOnPause(dtvr_sdk_id ?? "");
                   } else {
                     setState(() {
                       _controller.play();
                     });
-                    var dict = {
-                      'position':
-                          _controller.value.position.inSeconds.toString(),
-                      'sdkId': sdk_id,
-                    };
-                    final String? playData = await NielsenFlutterPluginPlatform
-                        .instance
-                        .setPlayheadPosition(jsonEncode(dict));
-                    print(
-                      "sdk instance play call returned when resuming the video: $playData",
+                    await nielsen.setPlayheadPosition(
+                      sdk_id ?? "",
+                      _controller.value.position.inSeconds,
                     );
                   }
                 },
@@ -881,22 +816,16 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
         children: [
           TextButton(
             onPressed: () async {
-              var metadata = {'metadata': homeMetadata, 'sdkId': static_sdk_id};
-              String? staticMetadata = await NielsenFlutterPluginPlatform
-                  .instance
-                  .loadMetadata(jsonEncode(metadata));
-              print(
-                "static metadata on reload button ${staticMetadata.toString()}",
+              await nielsen.loadMetadata(
+                static_sdk_id ?? "",
+                homeMetadata?.toJson() ?? {},
               );
             },
             child: Text('Static Reload', style: TextStyle(color: Colors.white)),
           ),
           TextButton(
             onPressed: () async {
-              final String? staticEndData = await NielsenFlutterPluginPlatform
-                  .instance
-                  .staticEnd(jsonEncode({'sdkId': static_sdk_id}));
-              print("sdk instance static end call returned: $staticEndData");
+              await nielsen.staticEnd(static_sdk_id ?? "");
             },
             child: Text('StaticEnd', style: TextStyle(color: Colors.white)),
           ),
@@ -906,14 +835,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
                   setState(() {
                     if (_controller.value.isPlaying) {
                       _controller.pause();
-                      if (sdk_id != null) {
-                        handleStopOnPause(sdk_id!);
-                      }
+                      handleStopOnPause(sdk_id ?? "");
 
-                      if (dtvr_sdk_id != null) {
-                        // handle dtvr pause
-                        handleStopOnPause(dtvr_sdk_id!);
-                      }
+                      // handle dtvr pause
+                      handleStopOnPause(dtvr_sdk_id ?? "");
                     }
                   });
                   if (mounted &&
@@ -924,6 +849,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
                           MaterialPageRoute(
                             builder:
                                 (context) => Infoscreen(
+                                  nielsen: nielsen,
                                   optoutData: optoutMetadata!,
                                   static_sdk_id: static_sdk_id!,
                                 ),
@@ -932,16 +858,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
                         .then((screen) async {
                           currentScreen = screen.toString();
                           print("current screen is $currentScreen");
-                          var metadata = {
-                            'metadata': homeMetadata,
-                            'sdkId': static_sdk_id,
-                          };
 
-                          String? staticMetadata =
-                              await NielsenFlutterPluginPlatform.instance
-                                  .loadMetadata(jsonEncode(metadata));
-                          print(
-                            "reloaded data when app is coming to foreground $staticMetadata",
+                          await nielsen.loadMetadata(
+                            static_sdk_id ?? "",
+                            homeMetadata?.toJson() ?? {},
                           );
                         });
                   }

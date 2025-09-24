@@ -30,22 +30,25 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
         sdkQueue.async(execute: block)
     }
     
-        // MARK: - Nielsen error codes
-    
+    // MARK: - Nielsen error codes
     private enum NlsErr {
-        static let jsonInvalid       = "NLS_JSON_INVALID"
-        static let argsMissing       = "NLS_ARGS_MISSING"
-        static let sdkNotFound       = "NLS_SDK_NOT_FOUND"
-        static let initFailed        = "NLS_INIT_FAILED"
-        static let methodUnsupported = "NLS_METHOD_UNSUPPORTED"
-        static let playheadInvalid   = "NLS_PLAYHEAD_INVALID"
+        static let jsonInvalid       = "NLS_JSON_INVALID: The JSON passed to the API is invalid or cannot be parsed."
+        static let argsMissing       = "NLS_ARGS_MISSING: One or more required arguments are missing."
+        static let sdkNotFound       = "NLS_SDK_NOT_FOUND: No active SDK instance was found for the given sdkId."
+        static let initFailed        = "NLS_INIT_FAILED: Nielsen SDK initialization failed."
+        static let methodUnsupported = "NLS_METHOD_UNSUPPORTED: The requested API method is not supported in this context."
+        static let playheadInvalid   = "NLS_PLAYHEAD_INVALID: Playhead position is missing or not valid (expected seconds)."
     }
     
     private func okMain(_ result: @escaping FlutterResult, _ value: Any? = "ok") {
         onMain { result(value) }
     }
-    private func failMain(_ result: @escaping FlutterResult, _ code: String, _ msg: String, _ details: Any? = nil) {
-        onMain { result(FlutterError(code: code, message: msg, details: details)) }
+    private func failMain(_ result: @escaping FlutterResult,
+                        _ code: String,
+                        _ msg: String) {
+        onMain {
+            result("[NielsenFlutterPlugin][ERROR] \(code) - \(msg)")
+        }
     }
     
         // MARK: - Registration
@@ -68,8 +71,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
         // MARK: - Method channel entry
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        switch call.method {
-            
+        switch call.method {   
         case "createInstance":
             onSDK { [weak self] in
                 guard let self = self else { return }
