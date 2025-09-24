@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nielsen_flutter_app/models/static_metadata.dart';
 import 'package:nielsen_flutter_app/screens/video_player_screen.dart';
-import 'package:nielsen_flutter_plugin_platform_interface/nielsen_flutter_plugin_platform_interface.dart';
+import 'package:nielsen_flutter_plugin/nielsen_flutter_plugin.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String currentScreen = '';
@@ -14,10 +14,12 @@ String currentScreen = '';
 // 1. The StatefulWidget class itself.
 // 2. The State class.
 class Infoscreen extends StatefulWidget {
+  final NielsenFlutterPlugin nielsen;
   final StaticMetadata optoutData;
   final String static_sdk_id;
   const Infoscreen({
     super.key,
+    required this.nielsen,
     required this.optoutData,
     required this.static_sdk_id,
   });
@@ -35,7 +37,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
   String? optOutUrl;
   String? deviceId;
   CurrentScreen? currentPage;
-
+  NielsenFlutterPlugin? nielsen;
   String? sdk_id;
 
   @override
@@ -44,6 +46,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
     super.initState();
     currentScreen = CurrentScreen.info.toString();
     WidgetsBinding.instance.addObserver(this);
+    nielsen = widget.nielsen;
     sdk_id = widget.static_sdk_id;
     _getInfoData();
   }
@@ -56,22 +59,12 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
   }
 
   Future<void> _getInfoData() async {
-    var sdkID = {'sdkId': sdk_id};
-
-    final String jsonString = jsonEncode(sdkID);
-
     try {
-      String? versionNumber = await NielsenFlutterPluginPlatform.instance
-          .getMeterVersion(jsonString);
-      String? demoId = await NielsenFlutterPluginPlatform.instance
-          .getDemographicId(jsonEncode(sdkID));
-      String? devId = await NielsenFlutterPluginPlatform.instance.getDeviceId(
-        jsonEncode(sdkID),
-      );
-      String? optout = await NielsenFlutterPluginPlatform.instance
-          .getOptOutStatus(jsonEncode(sdkID));
-      String? optoutUrl = await NielsenFlutterPluginPlatform.instance
-          .userOptOutURLString(jsonEncode(sdkID));
+      String? versionNumber = await nielsen?.getMeterVersion(sdk_id!);
+      String? demoId = await nielsen?.getDemographicId(sdk_id!);
+      String? devId = await nielsen?.getDeviceId(sdk_id!);
+      String? optout = await nielsen?.getOptOutStatus(sdk_id!);
+      String? optoutUrl = await nielsen?.userOptOutURLString(sdk_id!);
       // Update the state with the result from the native platform.
       setState(() {
         meterVersion = versionNumber.toString();
@@ -86,10 +79,8 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
 
     final staticMetadata = widget.optoutData;
     var data = {'sdkId': sdk_id, 'metadata': staticMetadata};
-    final String? metadataForSDKInstance = await NielsenFlutterPluginPlatform
-        .instance
-        .loadMetadata(jsonEncode(data));
-    print('sdk id on info page $metadataForSDKInstance');
+    await nielsen?.loadMetadata(sdk_id ?? "", data);
+    print('sdk id on info page');
   }
 
   _launchURL() async {
@@ -169,10 +160,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
                   foregroundColor: Colors.white,
                 ),
                 onPressed: () async {
-                  String? staticEndData = await NielsenFlutterPluginPlatform
-                      .instance
-                      .staticEnd(jsonEncode({'sdkId': sdk_id}));
-                  print("sdk instance static end call returned $staticEndData");
+                  await nielsen?.staticEnd(sdk_id ?? "");
                 },
                 child: Text('Static End'),
               ),
