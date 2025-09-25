@@ -26,11 +26,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		B8EAPrITc3PZOzxsZ5o3feqqUzM=
+		3xrQsOBMowzbQ+LF+Snj/Tr2w+o=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		pcXTiOx3T4QNhD49JE/kYyp6uT8=
+		CRwRCHomhHG+/wLdINZyqHsCcEQ=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GwjQAZ2DTrGm3lFc5zYCDCeFkr4=
+		/SMsErfvD3Et2DNG6V9NmaimPeg=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		pcXTiOx3T4QNhD49JE/kYyp6uT8=
+		CRwRCHomhHG+/wLdINZyqHsCcEQ=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		E809VwuYi0GsoMeTK0fp2mZLWSk=
+		3K8WCrXG3sazsqxYEfbwTaV2tGw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -186,7 +186,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nIKfWw1idFlP5OReSNXXXHM7w6tamAnfN6A4WciGqVw=
+			MwkYsD0Haq65OYy8DIJGnL5JsSQ6uRBjvie9Uv5xqpo=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -214,14 +214,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NQpjXuRyVDaTuHsSD43IjeW5z4oYTkIXzdnYZWvtRyY=
+			O4KyKwA5Y9hvyBQPEdcID3/pkD5jTlRBSs/XaG54KkA=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nIKfWw1idFlP5OReSNXXXHM7w6tamAnfN6A4WciGqVw=
+			MwkYsD0Haq65OYy8DIJGnL5JsSQ6uRBjvie9Uv5xqpo=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -249,7 +249,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KpGvtMRUN1ccXBO81nV01Ne81vMlob1F4vpn1CbY1Jo=
+			/ubdVg2mMjoqopqj9cVH6JeBwOMdqAB7mjSuFH+MjIE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
