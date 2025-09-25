@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		SWKHeJEtfRU2zJnIm7wJM8h1CGc=
+		D6l1eggSu4oaKIan3bCZ6JEVJVM=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		4kc2bSinB8NicrMoIi67SMK3xuE=
+		q0bLEW6u3Rl2z83DY544rmhVwKA=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		SWKHeJEtfRU2zJnIm7wJM8h1CGc=
+		D6l1eggSu4oaKIan3bCZ6JEVJVM=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		0owr1In4/zcxuUPP9+sfcJq/He4=
+		wOJzltOQ5Jav0z+Rc0F3PyE9Yyo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -190,7 +190,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YpZl9AC6IkVnpOR5YCzwJs1ek3KVSA9rsCruvBb/GRo=
+			iU0ImRS8hbIXEufeim4kDLuygnoxhrGl0l7Oxh141L8=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
@@ -218,14 +218,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kVbBsYgZPMdoXMzq0tZDAjARBi0toDz1mjF6NZPiROc=
+			FIRngfvkptEVpYP6ylzHMSTzZkmVlDO72bIMT2OiOiQ=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YpZl9AC6IkVnpOR5YCzwJs1ek3KVSA9rsCruvBb/GRo=
+			iU0ImRS8hbIXEufeim4kDLuygnoxhrGl0l7Oxh141L8=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
@@ -253,7 +253,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3Mdl/vLw90mLXWD++n8EnnP5GX0YFUO2LbkTYl+TYO8=
+			eHHmJMrJc5b3Y87B9dySndeiJn9d7RhYbX2LtWVviTY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
