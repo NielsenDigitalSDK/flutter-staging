@@ -19,7 +19,9 @@ class _SplashScreenState extends State<SplashScreen> {
       // Only run on iOS
       WidgetsBinding.instance.addPostFrameCallback((_) => initPlugin());
     } else {
-      _navigateToHome();
+      Timer (Duration(seconds: 3), () {
+        _navigateToHome();
+      });
     }
   }
 

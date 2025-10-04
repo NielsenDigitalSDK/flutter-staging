@@ -3,8 +3,8 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'nielsen_flutter_plugin_ios'
-  s.version          = '0.0.1'
-  s.summary          = 'An iOS implementation of the nielsen_flutter_plugin plugin.'
+  s.version          = '10.1.0'
+  s.summary          = 'An iOS implementation of the Nielsen flutter plugin.'
   s.description      = <<-DESC
   An iOS implementation of the nielsen_flutter_plugin plugin.
                        DESC

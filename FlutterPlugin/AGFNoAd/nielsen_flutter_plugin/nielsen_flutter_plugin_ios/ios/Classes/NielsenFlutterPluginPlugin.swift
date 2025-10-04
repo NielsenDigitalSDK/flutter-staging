@@ -39,6 +39,28 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
         static let methodUnsupported = "NLS_METHOD_UNSUPPORTED: The requested API method is not supported in this context."
         static let playheadInvalid   = "NLS_PLAYHEAD_INVALID: Playhead position is missing or not valid (expected seconds)."
     }
+
+    private enum NlsAPIsArgs {
+        static let CREATE_INSTANCE = "createInstance"
+        static let LOAD_METADATA = "loadMetadata"
+        static let PLAY = "play"
+        static let STOP = "stop"
+        static let END = "end"
+        static let SET_PLAYHEAD_POSITION = "setPlayheadPosition"
+        static let FREE = "free"
+        static let GET_DEMOGRAPHIC_ID = "getDemographicId"
+        static let GET_OPTOUT_STATUS = "getOptOutStatus"
+        static let USER_OPTOUT_URL_STRING = "userOptOutURLString"
+        static let GET_METER_VERSION = "getMeterVersion"
+        static let STATIC_END = "staticEnd"
+        static let SEND_ID3 = "sendID3"
+        static let GET_DEVICE_ID = "getDeviceId"
+        static let GET_FPID = "getFpId"
+        static let GET_VENDOR_ID = "getVendorId"
+        static let UPDATE_OTT = "updateOTT"
+        static let CHANNEL_NAME = "nielsen_flutter_plugin_ios"
+        static let ID3_EVENT_CHANNEL_NAME = "id3_timed_metadata"
+    }
     
     private func okMain(_ result: @escaping FlutterResult, _ value: Any? = "ok") {
         onMain { result(value) }
@@ -55,14 +77,14 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
     
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(
-            name: "nielsen_flutter_plugin_ios",
+            name: NlsAPIsArgs.CHANNEL_NAME,
             binaryMessenger: registrar.messenger()
         )
         let instance = NielsenFlutterPluginPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
         
         let metadataChannel = FlutterEventChannel(
-            name: "id3_timed_metadata",
+            name: NlsAPIsArgs.ID3_EVENT_CHANNEL_NAME,
             binaryMessenger: registrar.messenger()
         )
         metadataChannel.setStreamHandler(instance)
@@ -72,7 +94,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {   
-        case "createInstance":
+        case NlsAPIsArgs.CREATE_INSTANCE:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 guard
@@ -92,7 +114,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "loadMetadata":
+        case NlsAPIsArgs.LOAD_METADATA:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdkAndArgs(call: call, result: result) { sdk, obj in
@@ -104,7 +126,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "play":
+        case NlsAPIsArgs.PLAY:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdkAndArgs(call: call, result: result) { sdk, obj in
@@ -116,7 +138,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "stop":
+        case NlsAPIsArgs.STOP:
             onMain { [weak self] in self?.player?.pause() }
             onSDK { [weak self] in
                 guard let self = self else { return }
@@ -126,7 +148,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "end":
+        case NlsAPIsArgs.END:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -135,7 +157,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "setPlayheadPosition":
+        case NlsAPIsArgs.SET_PLAYHEAD_POSITION:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdkAndArgs(call: call, result: result) { sdk, obj in
@@ -147,7 +169,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "getDemographicId":
+        case NlsAPIsArgs.GET_DEMOGRAPHIC_ID:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -155,7 +177,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "getOptOutStatus":
+        case NlsAPIsArgs.GET_OPTOUT_STATUS:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -163,7 +185,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "userOptOutURLString":
+        case NlsAPIsArgs.USER_OPTOUT_URL_STRING:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -171,7 +193,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "getMeterVersion":
+        case NlsAPIsArgs.GET_METER_VERSION:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -179,7 +201,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "getDeviceId":
+        case NlsAPIsArgs.GET_DEVICE_ID:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -187,7 +209,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "staticEnd":
+        case NlsAPIsArgs.STATIC_END:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -196,7 +218,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "sendID3":
+        case NlsAPIsArgs.SEND_ID3:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdkAndArgs(call: call, result: result) { sdk, obj in
@@ -208,7 +230,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                 }
             }
             
-        case "free":
+        case NlsAPIsArgs.FREE:
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdkAndArgs(call: call, result: result) { _, obj in
@@ -217,6 +239,34 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                     }
                     self.nlsSDKs[sdkId] = nil
                     self.okMain(result, "Freed")
+                }
+            }
+
+        case NlsAPIsArgs.GET_FPID:
+            onSDK { [weak self] in
+                guard let self = self else { return }
+                self.withSdk(call: call, result: result) { sdk in
+                    self.okMain(result, sdk.firstPartyId)
+                }
+            }
+
+        case NlsAPIsArgs.GET_VENDOR_ID:
+            onSDK { [weak self] in
+                guard let self = self else { return }
+                self.withSdk(call: call, result: result) { sdk in
+                    self.okMain(result, sdk.vendorId)
+                }
+            }
+
+        case NlsAPIsArgs.UPDATE_OTT:
+            onSDK { [weak self] in
+                guard let self = self else { return }
+                self.withSdkAndArgs(call: call, result: result) { sdk, obj in
+                    guard let metadata = obj["ottData"] as? [String: Any] else {
+                        return self.failMain(result, NlsErr.argsMissing, "Missing 'ottData'")
+                    }
+                    sdk.updateOTT(metadata)
+                    self.okMain(result, "Update OTT called successfully")
                 }
             }
             

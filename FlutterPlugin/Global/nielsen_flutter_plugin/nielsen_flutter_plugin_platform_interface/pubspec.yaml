@@ -1,6 +1,6 @@
 name: nielsen_flutter_plugin_platform_interface
-description: A common platform interface for the nielsen_flutter_plugin plugin.
-version: 0.1.0+1
+description: A common platform interface for the Nielsen AppSDK Flutter Plugin.
+version: 10.1.0+0
 publish_to: none
 
 environment:
@@ -10,8 +10,3 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.1.8
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  very_good_analysis: ^6.0.0

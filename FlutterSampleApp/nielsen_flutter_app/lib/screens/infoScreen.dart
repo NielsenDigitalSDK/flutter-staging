@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nielsen_flutter_app/models/static_metadata.dart';
@@ -36,6 +34,8 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
   String? meterVersion;
   String? optOutUrl;
   String? deviceId;
+  String? fpid;
+  String? vendorId;
   CurrentScreen? currentPage;
   NielsenFlutterPlugin? nielsen;
   String? sdk_id;
@@ -65,6 +65,8 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
       String? devId = await nielsen?.getDeviceId(sdk_id!);
       String? optout = await nielsen?.getOptOutStatus(sdk_id!);
       String? optoutUrl = await nielsen?.userOptOutURLString(sdk_id!);
+      String? _fpid = await nielsen?.getFpId(sdk_id!);
+      String? _vendorId = await nielsen?.getVendorId(sdk_id!);
       // Update the state with the result from the native platform.
       setState(() {
         meterVersion = versionNumber.toString();
@@ -72,15 +74,18 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
         optOutStatus = optout.toString();
         optOutUrl = optoutUrl.toString();
         deviceId = devId!.isEmpty ? 'N/A' : devId.toString();
+        fpid = _fpid.toString();
+        vendorId = _vendorId.toString();
       });
     } on PlatformException catch (e) {
       print("Failed to send data: '${e.message}'.");
     }
 
-    final staticMetadata = widget.optoutData;
-    var data = {'sdkId': sdk_id, 'metadata': staticMetadata};
-    await nielsen?.loadMetadata(sdk_id ?? "", data);
-    print('sdk id on info page');
+    final staticMetadata = widget.optoutData.toJson();
+    await nielsen?.loadMetadata(sdk_id ?? "", staticMetadata);
+
+    Map<String, dynamic> updateOTT = {'ottStatus': '0', 'ottType': 'Casting'};
+    await nielsen?.updateOTT(sdk_id!, updateOTT);
   }
 
   _launchURL() async {
@@ -106,7 +111,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
@@ -116,7 +121,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             Container(
               margin: EdgeInsets.only(left: 20),
               child: Text(
@@ -125,7 +130,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             Container(
               margin: EdgeInsets.only(left: 20),
               child: Text(
@@ -133,7 +138,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             Container(
               margin: EdgeInsets.only(left: 20),
               child: Text(
@@ -141,7 +146,20 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: 20),
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              child: Text('FPID Id: $fpid', style: TextStyle(fontSize: 16)),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              child: Text(
+                'Vendor Id: $vendorId',
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
+            const SizedBox(height: 40),
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -152,7 +170,7 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
                 child: Text('Optout'),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(

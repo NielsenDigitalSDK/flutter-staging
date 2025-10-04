@@ -14,10 +14,6 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  // ---------- Optional helpers ----------
-  Future<String?> getPlatformName();
-  Future<Map<String, String>> getAppInfo();
-
   // ---------- Instance lifecycle ----------
   Future<String?> createInstance(String json);
   Future<String?> free(String json);
@@ -29,6 +25,7 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
   Future<String?> end(String json);
   Future<String?> staticEnd(String json);
   Future<String?> setPlayheadPosition(String json);
+  Future<String?> updateOTT(String json);
 
   // ---------- Timed metadata ----------
   Future<String?> sendID3(String json);
@@ -45,12 +42,6 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
 
 class _UnimplementedPlatform extends NielsenFlutterPluginPlatform {
   @override
-  Future<String> getPlatformName() async => 'unknown';
-
-  @override
-  Future<Map<String, String>> getAppInfo() async => {};
-
-  @override
   Future<String?> createInstance(String json) async => null;
 
   @override
@@ -61,6 +52,9 @@ class _UnimplementedPlatform extends NielsenFlutterPluginPlatform {
 
   @override
   Future<String?> loadMetadata(String json) async => null;
+
+  @override
+  Future<String?> updateOTT(String json) async => null;
 
   @override
   Future<String?> stop(String json) async => null;
