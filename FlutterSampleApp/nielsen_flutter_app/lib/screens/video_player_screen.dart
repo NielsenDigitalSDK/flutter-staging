@@ -275,12 +275,15 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
           final metadata = _appConfig?.channels[index].metadata;
 
           if (dtvr_sdk_id != null) {
-            await nielsen.play(dtvr_sdk_id!, channelInfo?.toJson() ?? {});
-
-            await nielsen.loadMetadata(dtvr_sdk_id!, metadata?.toJson() ?? {});
-
             // play for dtvr
             await nielsen.play(dtvr_sdk_id!, channelInfo?.toJson() ?? {});
+          }
+
+          if (sdk_id != null) {
+            // play for DCR
+            await nielsen.play(sdk_id!, channelInfo?.toJson() ?? {});
+            // loadmetadata for DCR
+            await nielsen.loadMetadata(sdk_id!, metadata?.toJson() ?? {});
           }
 
           if (mounted) {

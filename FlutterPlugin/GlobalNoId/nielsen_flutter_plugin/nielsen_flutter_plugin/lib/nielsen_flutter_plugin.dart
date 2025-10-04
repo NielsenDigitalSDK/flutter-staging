@@ -84,6 +84,13 @@ class NielsenFlutterPlugin {
     _logDebug('setPlayheadPosition', res);
   }
 
+  /// Reporting OTT update event to the SDK.
+  Future<void> updateOTT(String sdkId, Map<String, dynamic> ottData) async {
+    final res =
+        await _p.updateOTT(jsonEncode({'sdkId': sdkId, 'ottData': ottData}));
+    _logDebug('updateOTT', res);
+  }
+
   // ----------------------------------------------------------------------
   // Timed metadata (ID3)
   // ----------------------------------------------------------------------
@@ -146,11 +153,4 @@ class NielsenFlutterPlugin {
     _logDebug('getFpid', res);
     return res;
   }
-
-  // ----------------------------------------------------------------------
-  // Optional helpers
-  // ----------------------------------------------------------------------
-
-  /// Platform name (“iOS” / “Android”).
-  Future<String?> getPlatformName() => _p.getPlatformName();
 }

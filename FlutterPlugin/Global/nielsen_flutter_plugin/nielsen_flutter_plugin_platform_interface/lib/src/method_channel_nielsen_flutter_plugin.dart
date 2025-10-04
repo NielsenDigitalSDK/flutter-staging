@@ -11,11 +11,6 @@ class MethodChannelNielsenFlutterPlugin extends NielsenFlutterPluginPlatform {
   final methodChannel = const MethodChannel('nielsen_flutter_plugin');
 
   @override
-  Future<String?> getPlatformName() {
-    return methodChannel.invokeMethod<String>('getPlatformName');
-  }
-
-  @override
   Future<String?> createInstance(String data) {
     return methodChannel.invokeMethod<String>(constants.createInstance, data);
   }
