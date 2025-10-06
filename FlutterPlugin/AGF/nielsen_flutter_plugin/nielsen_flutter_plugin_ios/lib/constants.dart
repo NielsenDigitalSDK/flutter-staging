@@ -1,0 +1,20 @@
+import 'dart:core';
+
+const String iOSMethodChannel = 'nielsen_flutter_plugin_ios';
+const String createInstance = 'createInstance';
+const String play = 'play';
+const String loadMetadata = 'loadMetadata';
+const String stop = 'stop';
+const String end = 'end';
+const String setPlayheadPosition = 'setPlayheadPosition';
+const String sendID3 = 'sendID3';
+const String free = 'free';
+const String getDemographicId = 'getDemographicId';
+const String getOptOutStatus = 'getOptOutStatus';
+const String userOptOutURLString = 'userOptOutURLString';
+const String getMeterVersion = 'getMeterVersion';
+const String staticEnd = 'staticEnd';
+const String getFpId = 'getFpId';
+const String getVendorId = 'getVendorId';
+const String getDeviceId = 'getDeviceId';
+const String updateOTT = 'updateOTT';

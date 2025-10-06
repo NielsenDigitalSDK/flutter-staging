@@ -1,0 +1,63 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+}
+
+group 'com.nielsen.appsdk.flutter.plugin'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+android {
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.nielsen.appsdk.flutter.plugin'
+    }
+
+    compileSdk 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+    }
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.0"
+        implementation "androidx.media3:media3-exoplayer:1.3.1"
+        implementation "androidx.media3:media3-common:1.3.1"
+        implementation "com.google.android.gms:play-services-ads-identifier:18.2.0"
+        implementation files('libs/appsdk.jar')
+
+        testImplementation 'org.jetbrains.kotlin:kotlin-test'
+        testImplementation 'org.mockito:mockito-core:5.0.0'
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+
+            testLogging {
+               events "passed", "skipped", "failed", "standardOut", "standardError"
+               outputs.upToDateWhen {false}
+               showStandardStreams = true
+            }
+        }
+    }
+}

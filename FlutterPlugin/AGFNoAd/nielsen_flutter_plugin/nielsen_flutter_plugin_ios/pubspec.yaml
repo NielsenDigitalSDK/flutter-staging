@@ -1,0 +1,21 @@
+name: nielsen_flutter_plugin_ios
+description: iOS implementation of the nielsen_flutter_plugin plugin
+version: 10.1.0+0
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+flutter:
+  plugin:
+    implements: nielsen_flutter_plugin
+    platforms:
+      ios:
+        pluginClass: NielsenFlutterPluginPlugin
+        dartPluginClass: NielsenFlutterPluginIOS
+
+dependencies:
+  flutter:
+    sdk: flutter
+  nielsen_flutter_plugin_platform_interface:
+    path: ../nielsen_flutter_plugin_platform_interface

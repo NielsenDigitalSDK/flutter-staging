@@ -1,0 +1,22 @@
+name: nielsen_flutter_plugin_android
+description: Android implementation of the Nielsen AppSDK Flutter Plugin
+version: 10.1.0+0
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+flutter:
+  plugin:
+    implements: nielsen_flutter_plugin
+    platforms:
+      android:
+        package: com.nielsen.appsdk.flutter.plugin
+        pluginClass: NielsenFlutterPluginPlugin
+        dartPluginClass: NielsenFlutterPluginAndroid
+
+dependencies:
+  flutter:
+    sdk: flutter
+  nielsen_flutter_plugin_platform_interface:
+    path: ../nielsen_flutter_plugin_platform_interface
