@@ -1,0 +1,348 @@
+{
+    "channels":
+    [
+        {
+            "url": "https://nielsenonlinesupport.com/streams/BBB/prog_index.m3u8",
+            "breakout": "",
+            "channelInfo":
+            {
+                "channelName": "My Channel Name 1",
+                "adModel": "2",
+                "dataSrc": "cms"
+            },
+            "metadata":
+            {
+                "type": "content",
+                "assetid": "ProgramAssetId-1",
+                "program": "My Program Name 1",
+                "title": "Big Bug Bunny",
+                "genre": "Comedy",
+                "length": "3600",
+                "segB": "CustomSegmentValueB",
+                "segC": "CustomSegmentValueC",
+                "adobeId": "adobeIdValue2",
+                "reportSuite": "123",
+                "crossId1": "Reference11",
+                "crossId2": "Reference22",
+                "adloadtype": "2",
+                "programId": "MyProgramNameId-1",
+                "tvStationId": "tvStationId-1"
+            },
+            "ads":
+            [
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3002/prog_index.m3u8",
+                    "adtype": "preroll",
+                    "duration": "5",
+                    "metadata":
+                    {
+                        "assetid": "ad-11",
+                         "type": "preroll",
+                         "title": "preroll ad 11"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3002/prog_index.m3u8",
+                    "adtype": "preroll",
+                    "duration": "5",
+                    "metadata":
+                    {
+                        "assetid": "ad-12",
+                        "type": "preroll",
+                        "title": "preroll ad 12"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3003/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "10",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-13",
+                        "type": "midroll",
+                        "title": "midroll ad 13"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3004/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "20",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-14",
+                        "type": "midroll",
+                        "title": "midroll ad 14"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3005/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "30",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-15",
+                        "type": "midroll",
+                        "title": "midroll ad 15"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3005/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "40",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-16",
+                        "type": "midroll",
+                        "title": "midroll ad 16"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3006/prog_index.m3u8",
+                    "adtype": "postroll",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-17",
+                        "type": "postroll",
+                        "title": "postroll ad 17"
+                    }
+                }
+            ]
+        },
+        {
+            "url": "https://nielsenonlinesupport.com/streams/NielsenConsumer/prog_index.m3u8",
+            "breakout": "",
+            "channelInfo":
+            {
+                "channelName": "My Channel Name 2",
+                "adModel": "2",
+                "dataSrc": "cms"
+            },
+            "metadata":
+            {
+                "type": "content",
+                "assetid": "ProgramAssetId-2",
+                "program": "My Program Name 2",
+                "title": "Nielsen Consumer",
+                "genre": "Action",
+                "length": "3600",
+                "segB": "CustomSegmentValueB",
+                "segC": "CustomSegmentValueC",
+                "adobeId": "adobeIdValue3",
+                "reportSuite": "123",
+                "crossId1": "Reference11",
+                "crossId2": "Reference22",
+                "adloadtype": "2",
+                "programId": "MyProgramNameId-2",
+                "tvStationId": "tvStationId-2"
+            },
+            "ads":
+            [
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3002/prog_index.m3u8",
+                    "adtype": "preroll",
+                    "duration": "5",
+                    "metadata":
+                    {
+                        "assetid": "ad-21",
+                        "type": "preroll",
+                        "title": "preroll ad 21"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3002/prog_index.m3u8",
+                    "adtype": "preroll",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-22",
+                        "type": "preroll",
+                        "title": "midroll ad 22"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3003/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "20",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-23",
+                        "type": "midroll",
+                        "title": "midroll ad 23"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3004/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "40",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-24",
+                        "type": "midroll",
+                        "title": "midroll ad 24"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3005/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "60",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-25",
+                        "type": "midroll",
+                        "title": "midroll ad 25"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3006/prog_index.m3u8",
+                    "adtype": "postroll",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-26",
+                        "type": "postroll",
+                        "title": "postroll ad 26"
+                    }
+                }
+             ]
+        },
+        {
+            "url": "https://nielsenonlinesupport.com/streams/NielsenConsumer/prog_index.m3u8",
+            "breakout": "",
+            "channelInfo":
+            {
+                "channelName": "My Channel Name 3",
+                "adModel": "2",
+                "dataSrc": "cms"
+            },
+            "metadata":
+            {
+                "type": "content",
+                "assetid": "ProgramAssetId-3",
+                "program": "My Program Name 3",
+                "title": "Nielsen Commercial",
+                "genre": "Action",
+                "length": "3600",
+                "segB": "CustomSegmentValueB",
+                "segC": "CustomSegmentValueC",
+                "adobeId": "adobeIdValue3",
+                "reportSuite": "123",
+                "crossId1": "Reference11",
+                "crossId2": "Reference22",
+                "adloadtype": "2",
+                "programId": "MyProgramNameId-3",
+                "tvStationId": "tvStationId-3"
+            },
+            "ads":
+            [
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3002/prog_index.m3u8",
+                    "adtype": "preroll",
+                    "duration": "5",
+                    "metadata":
+                    {
+                        "assetid": "ad-21",
+                        "type": "preroll",
+                        "title": "preroll ad 21"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3002/prog_index.m3u8",
+                    "adtype": "preroll",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-22",
+                        "type": "preroll",
+                        "title": "midroll ad 22"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3003/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "20",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-23",
+                        "type": "midroll",
+                        "title": "midroll ad 23"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3004/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "40",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-24",
+                        "type": "midroll",
+                        "title": "midroll ad 24"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3005/prog_index.m3u8",
+                    "adtype": "midroll",
+                    "start": "60",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-25",
+                        "type": "midroll",
+                        "title": "midroll ad 25"
+                    }
+                },
+                {
+                    "url": "http://www.nielseninternet.com/NWCC-3006/prog_index.m3u8",
+                    "adtype": "postroll",
+                    "duration": "10",
+                    "metadata":
+                    {
+                        "assetid": "ad-26",
+                        "type": "postroll",
+                        "title": "postroll ad 26"
+                    }
+                }
+             ]
+        }
+    ],
+    "static":
+    {
+        "home":
+        {
+            "metadata":
+            {
+                "type": "static",
+                "section": "homeSection",
+                "segA": "CustomSegmentValueA",
+                "segB": "CustomSegmentValueB",
+                "segC": "CustomSegmentValueC",
+                "adobeId": "adobeIdValue4",
+                "reportSuite": "123",
+                "crossId1": "crossReference11"
+            }
+        },
+        "optout":
+        {
+            "metadata":
+            {
+                "type": "static",
+                "section": "optoutSection",
+                "segA": "CustomSegmentValueA",
+                "segB": "CustomSegmentValueB",
+                "segC": "CustomSegmentValueC",
+                "adobeId": "adobeIdValue5",
+                "reportSuite": "123",
+                "crossId1": "crossReference11"
+            }
+        }
+    }
+}
