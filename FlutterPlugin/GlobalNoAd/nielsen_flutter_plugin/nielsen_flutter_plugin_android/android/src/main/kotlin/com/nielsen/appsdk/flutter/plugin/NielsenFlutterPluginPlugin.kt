@@ -1,39 +1,25 @@
 package com.nielsen.appsdk.flutter.plugin
 
-import android.content.Context
-import android.util.Log
-import androidx.media3.common.MediaItem
-import androidx.media3.common.Metadata
-import androidx.media3.common.Player
-import androidx.media3.common.util.UnstableApi
-import androidx.media3.exoplayer.ExoPlayer
-import androidx.media3.extractor.metadata.id3.PrivFrame
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
-
-import com.nielsen.app.sdk.AppSdk
-
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin
+
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-
 import io.flutter.plugin.common.BinaryMessenger
-import io.flutter.plugin.common.EventChannel
 
+import android.content.Context
+import android.util.Log
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 import java.util.Date
 
-class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler, EventChannel.StreamHandler {
+import com.nielsen.app.sdk.AppSdk
+
+class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler {
     private var applicationContext: Context? = null
     private var methodChannel: MethodChannel? = null
-    private var appSdk: AppSdk? = null // Single instance model
-    private var id3EventSink: EventChannel.EventSink? = null
-    private var exoPlayer: ExoPlayer? = null
-    private var id3EventChannel: EventChannel? = null // Initialize in onAttachedToEngine
-    private var appSdkForId3EventChannel: AppSdk? = null
     private val appSdkInstanceMap: MutableMap<String, AppSdk?> = mutableMapOf()
 
     companion object {
@@ -55,11 +41,9 @@ class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler, EventChanne
         private const val GET_FPID = "getFpId"
         private const val GET_VENDOR_ID = "getVendorId"
         private const val UPDATE_OTT = "updateOTT"
+        private const val USER_OPTOUT = "userOptOut"
         private const val TAG = "NielsenFlutterPlugin"
         private const val CHANNEL_NAME = "nielsen_flutter_plugin_android"
-        private const val ID3_EVENT_CHANNEL_NAME = "id3_timed_metadata" // Channel for ID3 events
-        private const val ID3_LENGTH: Int = 249
-
     }
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
@@ -72,11 +56,6 @@ class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler, EventChanne
         methodChannel?.setMethodCallHandler(this)
 
         Log.d(TAG, "NielsenFlutterPlugin attached to engine. Channel: $CHANNEL_NAME")
-
-        id3EventChannel = EventChannel(messenger, ID3_EVENT_CHANNEL_NAME)
-        id3EventChannel?.setStreamHandler(this) // 'this' will handle ID3 stream events
-
-        Log.d(TAG, "NielsenFlutterPlugin ID3 EventChannel attached. Channel: $ID3_EVENT_CHANNEL_NAME")
     }
 
     override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
@@ -86,14 +65,8 @@ class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler, EventChanne
         methodChannel?.setMethodCallHandler(null)
         methodChannel = null
 
-        id3EventChannel?.setStreamHandler(null)
-        id3EventChannel = null
-        releaseExoPlayer() // Clean up ExoPlayer
-
         closeAllAppSdkInstances() // Close all the sdk instances created so far
 
-        appSdk?.close() // Close the SDK instance if it exists
-        appSdk = null
         applicationContext = null
     }
 
@@ -177,7 +150,7 @@ class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler, EventChanne
 
                 SEND_ID3 -> {
                     if (jsonStringObject != null) {
-                        val payload = jsonStringObject.getString("payload")
+                        val payload = jsonStringObject.getString("sendID3")
                         sendID3(appSdk, payload, result)
                     }
                 }
@@ -198,6 +171,13 @@ class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler, EventChanne
                     if (jsonStringObject != null) {
                         val ottDataJSON = jsonStringObject.getJSONObject("ottData")
                         updateOTT(appSdk, ottDataJSON, result)
+                    }
+                }
+
+                USER_OPTOUT -> {
+                    if (jsonStringObject != null) {
+                        val userOptOutResponse = jsonStringObject.getString("url")
+                        userOptout(appSdk, userOptOutResponse, result)
                     }
                 }
 
@@ -585,132 +565,28 @@ class NielsenFlutterPluginPlugin : FlutterPlugin, MethodCallHandler, EventChanne
         }
     }
 
-    override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
+    private fun userOptout(sdk: AppSdk?, userOptoutResponse: String?, result: Result) {
 
-        Log.d(
-            TAG,
-            "EventChannel.onListen called for '$ID3_EVENT_CHANNEL_NAME'. Raw arguments: '$arguments'"
-        )
-
-        this.id3EventSink = events
-
-        if (arguments is String) {
-            if (arguments.isNotEmpty()) {
-                val argsJsonObject = JSONObject(arguments)
-                val urlString = argsJsonObject.getString("url")
-                val appSdkId = argsJsonObject.getString("sdkId")
-                appSdkForId3EventChannel = findAppSDKInstanceBySdkId(appSdkId)
-                Log.d(TAG, "EventChannel.onListen: Received URL string: '$urlString'") // <--- LOG 5
-                Log.d(
-                    TAG, "EventChannel.onListen: Received SdkId string: '$appSdkId'"
-                ) // <--- LOG 5
-                startPlaybackWithTimedMetadata(urlString)
-            } else {
-                Log.e(TAG, "EventChannel.onListen: Received an EMPTY URL string.")
-                id3EventSink?.error("INVALID_ARGUMENTS", "Received an empty URL string.", null)
-            }
-        }
-        else {
-            Log.e(
-                TAG,
-                "EventChannel.onListen: Arguments are NOT a String or are null. Type: ${arguments?.javaClass?.name}"
-            ) // <--- LOG 6
-            id3EventSink?.error(
-                "INVALID_ARGUMENTS",
-                "URL string expected. Received: ${arguments?.javaClass?.name}",
-                null
-            )
-        }
-    }
-
-    override fun onCancel(arguments: Any?) {
-
-        Log.d(
-            TAG,
-            "EventChannel.onCancel called for '$ID3_EVENT_CHANNEL_NAME'. Arguments: '$arguments'"
-        ) // <--- LOG
-        this.id3EventSink = null
-        releaseExoPlayer()
-    }
-
-    private fun startPlaybackWithTimedMetadata(urlString: String) {
-
-        Log.d(TAG, "startPlaybackWithTimedMetadata called with URL: $urlString")
-        val currentContext = applicationContext
-        if (currentContext == null) {
-            Log.e(TAG, "startPlaybackWithTimedMetadata: Application context is null!")
-            id3EventSink?.error(
-                "CONTEXT_NULL", "Application context is null, cannot start playback.", null
+        if (sdk == null) {
+            result.error(
+                "SDK_NOT_INITIALIZED", "Nielsen AppSDK instance not available for userOptout.", null
             )
             return
         }
-        releaseExoPlayer()
-
+        if (userOptoutResponse == null) {
+            result.error("INVALID_ARGUMENTS", "Payload for userOptout cannot be null.", null)
+            return
+        }
         try {
-            exoPlayer = ExoPlayer.Builder(currentContext).build()
-            val mediaItem = MediaItem.fromUri(urlString)
-            exoPlayer?.setMediaItem(mediaItem)
-            exoPlayer?.addListener(playerListener)
-            exoPlayer?.prepare()
-            exoPlayer?.playWhenReady = true // Start playback when ready
-            Log.d(TAG, "ExoPlayer (Media3) preparing for URL: $urlString")
-        }
-        catch (e: Exception) {
-            Log.e(TAG, "Error starting ExoPlayer (Media3): ${e.message}", e)
-            id3EventSink?.error(
-                "EXOPLAYER_ERROR", "Failed to start ExoPlayer (Media3): ${e.message}", null
-            )
+            sdk.userOptOut(userOptoutResponse)
+            Log.d(TAG, "userOptout called with response: $userOptoutResponse")
+            result.success("userOptout called successfully")
+        } catch (e: Exception) {
+            Log.e(TAG, "Exception in userOptout", e)
+            result.error("NATIVE_ERROR", "Error in userOptout: ${e.message}", null)
         }
     }
-    private val playerListener = @UnstableApi object : Player.Listener {
 
-        override fun onMetadata(metadata: Metadata) {
-
-            Log.d("METADATA", metadata.toString())
-
-            for (i in 0 until metadata.length()) {
-                val metadataEntry: Metadata.Entry = metadata[i]
-                if (metadataEntry is PrivFrame) {
-                    val privFrame: PrivFrame = metadataEntry
-                    Log.d(TAG, "ID3 Metadata ${privFrame.owner}")
-
-                    if (privFrame.owner.startsWith("www.nielsen.com") && privFrame.owner.length == ID3_LENGTH && appSdkForId3EventChannel != null) {
-                        Log.d(TAG, "ID3 Metadata final ${privFrame.owner}")
-                        appSdkForId3EventChannel?.sendID3(privFrame.owner);
-                        Log.d(TAG, "Successfully called sendID3 API call")
-                    }
-                }
-                else {
-                    Log.e(
-                        TAG, "onMetadata() - invalid id3Metadata received (entry was not PrivFrame)"
-                    )
-                }
-            }
-        }
-
-        override fun onPlaybackStateChanged(playbackState: Int) {
-            Log.d(TAG, "Player state changed (Media3): $playbackState")
-        }
-
-        override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
-
-            Log.e(TAG, "Player error (Media3): ${error.errorCodeName} - ${error.message}", error)
-            id3EventSink?.error(
-                "EXOPLAYER_ERROR", "Player error: ${error.errorCodeName}", error.message
-            )
-        }
-    }
-    private fun releaseExoPlayer() {
-
-        exoPlayer?.let { player ->
-            Log.d(TAG, "Releasing ExoPlayer (Media3).")
-            player.removeListener(playerListener)
-            player.stop()
-            player.release()
-        }
-
-        exoPlayer = null
-    }
     private fun closeAllAppSdkInstances() {
         if (appSdkInstanceMap != null) {
                 Log.d(TAG, "Found ${appSdkInstanceMap.size} AppSDK instance(s).")

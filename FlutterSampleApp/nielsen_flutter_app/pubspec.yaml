@@ -40,20 +40,10 @@ dependencies:
   # The following adds the Nielsen AppSDK Flutter Plugin capabilities to the application
   nielsen_flutter_plugin:
     git:
-      #   #   url: https://github.com/NielsenDigitalSDK/flutter-test.git
-      #   #   path: nielsen_flutter_plugin/nielsen_flutter_plugin
-      #   #   ref: develop
-      #   # https://gitlab.com/nielsen-media/digital/shared/sdk/appsdk/platforms/cross-platforms
-
       url: https://gitlab+deploy-token-8289450:gldt-JugqgCD-oKGAxxq26zLd@gitlab.com/nielsen-media/digital/shared/sdk/appsdk/platforms/cross-platforms
       path: Flutter/FlutterPlugin/Global/nielsen_flutter_plugin/nielsen_flutter_plugin
-      ref: NielsenAppSDK-Flutter-Plugin-Android-iOS
-
-    # local repo path
-    # path: /Users/Akashverma/SourceCode/NielsenSDK/cross-platforms/Flutter/FlutterPlugin/Global/nielsen_flutter_plugin/nielsen_flutter_plugin
-  #     path: /Users/vedodla2401/Git/cross-platforms-flutter-plugin-android-changes/Flutter/FlutterPlugin/Global/nielsen_flutter_plugin/nielsen_flutter_plugin
-
-  url_launcher: ^6.1.11
+      ref: develop
+  webview_flutter: ^4.8.0
   app_tracking_transparency: ^2.0.6+1
 
 dev_dependencies:

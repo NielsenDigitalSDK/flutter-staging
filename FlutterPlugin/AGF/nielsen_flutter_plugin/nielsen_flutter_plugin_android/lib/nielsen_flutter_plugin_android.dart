@@ -100,4 +100,9 @@ class NielsenFlutterPluginAndroid extends NielsenFlutterPluginPlatform {
   Future<String?> getVendorId(String data) {
     return methodChannel.invokeMethod<String>(constants.getVendorId, data);
   }
+
+  @override
+  Future<String?> userOptOut(String data) {
+    return methodChannel.invokeMethod<String>(constants.userOptOut, data);
+  }
 }

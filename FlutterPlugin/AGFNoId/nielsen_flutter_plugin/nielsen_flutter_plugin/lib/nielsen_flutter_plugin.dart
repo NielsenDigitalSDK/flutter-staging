@@ -119,6 +119,13 @@ class NielsenFlutterPlugin {
     return res;
   }
 
+  /// Disable metering for the app due to user opt out.
+  Future<String?> userOptOut(String sdkId, String url) async {
+    final res = await _p.userOptOut(jsonEncode({'sdkId': sdkId, 'url': url}));
+    _logDebug('userOptOut', res);
+    return res;
+  }
+
   /// Returns the meter version string.
   Future<String?> getMeterVersion(String sdkId) async {
     final res = await _p.getMeterVersion(jsonEncode({'sdkId': sdkId}));
