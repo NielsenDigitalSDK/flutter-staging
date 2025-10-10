@@ -45,7 +45,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
   Timer? _timer;
   StaticMetadata? optoutMetadata;
   StaticMetadata? homeMetadata;
-  static const EventChannel _channel = EventChannel('id3_timed_metadata');
 
   var appInfo =
       (Platform.isAndroid)
@@ -258,18 +257,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
           _controller.play();
 
           dtvr_sdk_id ??= await nielsen.createInstance(appInfo);
-          Future.delayed(Duration(milliseconds: 500), () {
-            var sendID3Data = {'url': channelUrl, 'sdkId': dtvr_sdk_id};
-            _channel.receiveBroadcastStream(jsonEncode(sendID3Data)).listen((
-              event,
-            ) {
-              if (event is Map) {
-                setState(() {
-                  print("broad cast event is $event");
-                });
-              }
-            });
-          });
 
           final channelInfo = _appConfig?.channels[index].channelInfo;
           final metadata = _appConfig?.channels[index].metadata;
@@ -303,14 +290,11 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
 
   void _videoListener() {
     if (!mounted) return;
-    if (_controller.value.isPlaying) {
+    setState(() {});
+    if (_controller.value.isPlaying && (_timer == null || !_timer!.isActive)) {
       _startTimer();
-      _controller.removeListener(
-        _videoListener,
-      ); // Remove listener once playing
     } else if (!_controller.value.isPlaying && _timer?.isActive == true) {
-      _stopTimer(); // Stop timer if video is paused or stopped
-      _controller.addListener(_videoListener); // Listen again for play
+      _stopTimer();
     }
   }
 

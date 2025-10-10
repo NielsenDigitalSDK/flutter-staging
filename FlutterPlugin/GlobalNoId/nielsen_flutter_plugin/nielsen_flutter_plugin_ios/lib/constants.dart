@@ -12,6 +12,7 @@ const String free = 'free';
 const String getDemographicId = 'getDemographicId';
 const String getOptOutStatus = 'getOptOutStatus';
 const String userOptOutURLString = 'userOptOutURLString';
+const String userOptOut = 'userOptOut';
 const String getMeterVersion = 'getMeterVersion';
 const String staticEnd = 'staticEnd';
 const String getFpId = 'getFpId';
