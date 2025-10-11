@@ -18,3 +18,4 @@ const String getFpId = 'getFpId';
 const String getVendorId = 'getVendorId';
 const String getDeviceId = 'getDeviceId';
 const String updateOTT = 'updateOTT';
+const String userOptOut = 'userOptOut';

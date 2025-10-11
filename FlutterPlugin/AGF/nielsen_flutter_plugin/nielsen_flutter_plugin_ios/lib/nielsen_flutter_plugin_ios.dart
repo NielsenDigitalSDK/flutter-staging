@@ -77,6 +77,11 @@ class NielsenFlutterPluginIOS extends NielsenFlutterPluginPlatform {
   }
 
   @override
+  Future<String?> userOptOut(String data) {
+    return methodChannel.invokeMethod<String>(constants.userOptOut, data);
+  }
+
+  @override
   Future<String?> sendID3(String data) {
     return methodChannel.invokeMethod<String>(constants.sendID3, data);
   }
