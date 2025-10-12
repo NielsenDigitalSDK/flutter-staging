@@ -1,6 +1,5 @@
 import Flutter
 import UIKit
-import AVFoundation
 import NielsenAppApi
 
     /// Flutter plugin bridging Dart <-> Nielsen iOS SDK.
@@ -10,12 +9,6 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
     
     private var eventSink: FlutterEventSink?
     private var nlsSDKs: [String: NielsenAppApi] = [:]
-    
-        // AVFoundation
-    private var player: AVPlayer?
-    private var playerItem: AVPlayerItem?
-    private var asset: AVAsset?
-    private var metadataOutput: AVPlayerItemMetadataOutput?
     
     private var sdkIdForSendID3: String?
     
@@ -51,6 +44,7 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
         static let GET_DEMOGRAPHIC_ID = "getDemographicId"
         static let GET_OPTOUT_STATUS = "getOptOutStatus"
         static let USER_OPTOUT_URL_STRING = "userOptOutURLString"
+        static let USER_OPTOUT = "userOptOut"
         static let GET_METER_VERSION = "getMeterVersion"
         static let STATIC_END = "staticEnd"
         static let SEND_ID3 = "sendID3"
@@ -82,12 +76,6 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
         )
         let instance = NielsenFlutterPluginPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
-        
-        let metadataChannel = FlutterEventChannel(
-            name: NlsAPIsArgs.ID3_EVENT_CHANNEL_NAME,
-            binaryMessenger: registrar.messenger()
-        )
-        metadataChannel.setStreamHandler(instance)
     }
     
         // MARK: - Method channel entry
@@ -139,7 +127,6 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
             }
             
         case NlsAPIsArgs.STOP:
-            onMain { [weak self] in self?.player?.pause() }
             onSDK { [weak self] in
                 guard let self = self else { return }
                 self.withSdk(call: call, result: result) { sdk in
@@ -269,6 +256,17 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
                     self.okMain(result, "Update OTT called successfully")
                 }
             }
+        
+        case NlsAPIsArgs.USER_OPTOUT:
+            onSDK { [weak self] in
+                guard let self = self else { return }
+                self.withSdkAndArgs(call: call, result: result) { sdk, obj in
+                    guard let url = obj["url"] as? String else {
+                        return self.failMain(result, NlsErr.argsMissing, "Missing 'optOut URL'")
+                    }
+                    self.okMain(result, sdk.userOptOut(url) ? "true" : "false")
+                }
+            }
             
         default:
             failMain(result, NlsErr.methodUnsupported, "Method '\(call.method)' not implemented")
@@ -326,62 +324,5 @@ public class NielsenFlutterPluginPlugin: NSObject, FlutterPlugin {
             return failMain(result, NlsErr.sdkNotFound, "Unknown sdkId: \(sdkId)")
         }
         block(sdk, obj)
-    }
-}
-
-    // MARK: - Timed metadata forwarding
-
-extension NielsenFlutterPluginPlugin: AVPlayerItemMetadataOutputPushDelegate {
-    public func metadataOutput(_ output: AVPlayerItemMetadataOutput,
-                               didOutputTimedMetadataGroups groups: [AVTimedMetadataGroup],
-                               from track: AVPlayerItemTrack?) {
-        for group in groups {
-            for item in group.items {
-                if let id3Data = item.extraAttributes?[AVMetadataExtraAttributeKey.info] as? String,
-                   let sdkId = self.sdkIdForSendID3 {
-                    onSDK { [weak self] in
-                        guard let self = self, let sdk = self.nlsSDKs[sdkId] else { return }
-                        print("[NielsenFlutterPlugin] SendID3: \(id3Data)")
-                        sdk.sendID3(id3Data)
-                    }
-                }
-            }
-        }
-    }
-}
-
-    // MARK: - Event stream & AV setup
-
-extension NielsenFlutterPluginPlugin: FlutterStreamHandler {
-    public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
-        onMain { [weak self] in self?.eventSink = events }
-        guard
-            let argStr = arguments as? String,
-            let obj = self.jsonStringToDictionary(jsonString: argStr)
-        else { return nil }
-        sdkIdForSendID3 = obj["sdkId"] as? String
-        if let urlString = obj["url"] as? String {
-            startPlaybackWithTimedMetadata(url: urlString)
-        }
-        return nil
-    }
-    
-    public func onCancel(withArguments arguments: Any?) -> FlutterError? {
-        onMain { [weak self] in self?.eventSink = nil }
-        return nil
-    }
-    
-    private func startPlaybackWithTimedMetadata(url: String) {
-        onMain { [weak self] in
-            guard let self = self, let u = URL(string: url) else { return }
-            self.asset = AVAsset(url: u)
-            self.playerItem = AVPlayerItem(asset: self.asset!)
-            self.player = AVPlayer(playerItem: self.playerItem)
-            let output = AVPlayerItemMetadataOutput(identifiers: nil)
-            output.setDelegate(self, queue: DispatchQueue.main)
-            self.metadataOutput = output
-            self.playerItem?.add(output)
-            self.player?.play()
-        }
     }
 }

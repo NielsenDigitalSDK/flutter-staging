@@ -39,8 +39,7 @@ dependencies:
       url: https://github.com/NielsenDigitalSDK/flutter-staging.git
       ref: main
       path: FlutterPlugin/Global/nielsen_flutter_plugin/nielsen_flutter_plugin
-  #     path: /Users/vedodla2401/Git/cross-platforms-flutter-plugin-android-changes/Flutter/FlutterPlugin/Global/nielsen_flutter_plugin/nielsen_flutter_plugin
-  url_launcher: ^6.1.11
+  webview_flutter: ^4.8.0
   app_tracking_transparency: ^2.0.6+1
 dev_dependencies:
   flutter_test:

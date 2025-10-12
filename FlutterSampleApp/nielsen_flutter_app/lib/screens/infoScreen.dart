@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nielsen_flutter_app/models/static_metadata.dart';
+import 'package:nielsen_flutter_app/screens/opt_out_webview.dart';
 import 'package:nielsen_flutter_app/screens/video_player_screen.dart';
 import 'package:nielsen_flutter_plugin/nielsen_flutter_plugin.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 String currentScreen = '';
 
@@ -86,12 +86,35 @@ class _MyInfoWidgetState extends State<Infoscreen> with WidgetsBindingObserver {
 
     Map<String, dynamic> updateOTT = {'ottStatus': '0', 'ottType': 'Casting'};
     await nielsen?.updateOTT(sdk_id!, updateOTT);
+
+    await nielsen?.sendID3(
+      sdk_id!,
+      "www.nielsen.com/X100zdCIGeIlgZnkYj6UvQ==/UvQ9HSNOcTOL2ZobsXtIBQ==/AAkCZvkGtK-TRiT2J14KRFYkkNt1qeRsNw-c-3m6gUe_8Zz1koxbv3A3WAVVRN2m7k1lEPRm2qfT2w-RyfjQyF_lBFs3SAxJbLUGzBr0B_YlYvlFSj4_MhKzIFhaSy7AZSmRbvsH4VTbfTWyGmEHmUrfA1s1I01bNSNVNuQ=/00000/39675/00",
+    );
+    await nielsen?.sendID3(
+      sdk_id!,
+      "www.nielsen.com/X100zdCIGeIlgZnkYj6UvQ==/UvQ9HSNOcTOL2ZobsXtIBQ==/AAkCZvkGtK-TRiT2J14KRFYkkNt1qeRsNw-c-3m6gUe_8Zz1koxbv3A3WAVVRN2m7k1lEPRm2qfT2w-RyfjQyF_lBFs3SAxJbLUGzBr0B_YlYvlFSj4_MhKzIFhaSy7AZSmRbvsH4VTbfTWyGmEHmUrfA1s1I01bNSNVNuQ=/49695/39685/00",
+    );
   }
 
   _launchURL() async {
-    final Uri url = Uri.parse(optOutUrl!);
-    if (!await launchUrl(url)) {
-      throw Exception('Could not launch $url');
+    if (optOutUrl != null && optOutUrl!.isNotEmpty) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder:
+              (context) => OptOutWebView(
+                nielsen: nielsen!,
+                sdkId: sdk_id!,
+                optOutUrl: optOutUrl!,
+              ),
+        ),
+      );
+    } else {
+      // Handle the case where the URL is not available
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Opt-out URL not available.')),
+      );
     }
   }
 

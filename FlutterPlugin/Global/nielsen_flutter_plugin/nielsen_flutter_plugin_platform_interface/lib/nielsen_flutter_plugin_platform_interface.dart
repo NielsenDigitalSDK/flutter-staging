@@ -33,6 +33,7 @@ abstract class NielsenFlutterPluginPlatform extends PlatformInterface {
   // ---------- Info / privacy ----------
   Future<String?> getOptOutStatus(String json);
   Future<String?> userOptOutURLString(String json);
+  Future<String?> userOptOut(String json);
   Future<String?> getMeterVersion(String json);
   Future<String?> getDemographicId(String json);
   Future<String?> getDeviceId(String json);
@@ -76,6 +77,9 @@ class _UnimplementedPlatform extends NielsenFlutterPluginPlatform {
 
   @override
   Future<String?> userOptOutURLString(String json) async => null;
+
+  @override
+  Future<String?> userOptOut(String json) async => null;
 
   @override
   Future<String?> getMeterVersion(String json) async => null;
