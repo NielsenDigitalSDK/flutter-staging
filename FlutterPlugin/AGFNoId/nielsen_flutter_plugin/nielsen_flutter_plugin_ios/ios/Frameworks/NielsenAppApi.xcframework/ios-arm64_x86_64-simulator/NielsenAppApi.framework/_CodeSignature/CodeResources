@@ -26,11 +26,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7tbqwyPB3ZSmOL7mT5sMi0cCdWQ=
+		pwbZHqVUMN9AsZYjfXw05+XcTsg=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		c0pafhC78NSiYrOKyCDvWs5V37w=
+		Oev6o0OAPZsA8uWazxQ/KdsB1g8=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		nPayDuxQ68h6Ww9Krhr4Vyp/mss=
+		q/wTN+/YOZGp8l8VzeJlDfIPinQ=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		c0pafhC78NSiYrOKyCDvWs5V37w=
+		Oev6o0OAPZsA8uWazxQ/KdsB1g8=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		MiDbV/3SzJdEVlI1h4xhLUXvfYo=
+		rtV1gqW9ytbSdN4MuOFag2HozOg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>PrivateHeaders/NlsApiWorker.h</key>
 		<data>
-		VXKrAxTsZgaBrk4cLzhzHE4/lRE=
+		hNiCHydwMDJGps3xO6JpipZvOL8=
 		</data>
 		<key>PrivateHeaders/NlsBaseDataProcessor.h</key>
 		<data>
@@ -186,7 +186,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DX2yqHb0SUJ8oRx9yaP31kIATAtXFxy+6adBqfiOFXU=
+			xTOWBwxfZ33H9/LXIBYmR0SNUH3nhGU4B99/+tHInOw=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -214,14 +214,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ROiQi2QNjMfNp0ylzyDMEYiYtlo7o0oWQwICTC4bQVE=
+			9V8jIK5kMgjgEgGRS4oZ9ext2FgIPedzJuNheFOIboU=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DX2yqHb0SUJ8oRx9yaP31kIATAtXFxy+6adBqfiOFXU=
+			xTOWBwxfZ33H9/LXIBYmR0SNUH3nhGU4B99/+tHInOw=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -249,7 +249,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h4iDiTYsnDmp+2jh4N2at6PCes72Sq+PnIzEDuYipl8=
+			oXqgD1/g9uUJYcNHHAa0MAjbLM0z/IjzSQN2h4a2ty8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -270,7 +270,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			08QLPftUnqO/ebEl9Jc2K4Tqb5YXuoVnaY58+tN1xgc=
+			GpaEnWMq3jF6z9oxRWQH/MySWQyP+O4ZcdrU/n4BX2A=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NlsBaseDataProcessor.h</key>
