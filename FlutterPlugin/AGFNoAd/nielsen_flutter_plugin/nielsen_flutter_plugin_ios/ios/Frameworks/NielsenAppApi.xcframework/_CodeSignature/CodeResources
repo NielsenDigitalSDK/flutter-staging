@@ -58,7 +58,7 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/NielsenAppApi</key>
 		<data>
-		31qx6t/KnJRrf6lyNu9jECcNH3g=
+		yfF6X6zo1C3k/9crcxbExONE5Ds=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsApiWorker.h</key>
 		<data>
@@ -298,7 +298,7 @@
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/NielsenVisionAppApi</key>
 		<data>
-		Rkgdb5iXVjBb0AkNHXLRS2BbVkQ=
+		8Nkqd8zvlgIQWnYdbbySVWOut4Y=
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -478,11 +478,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			31qx6t/KnJRrf6lyNu9jECcNH3g=
+			yfF6X6zo1C3k/9crcxbExONE5Ds=
 			</data>
 			<key>hash2</key>
 			<data>
-			HnECol/VXNA8UAAhC8v3xjcRn8ODCx0dgpXULyh/CaM=
+			oT5TpYEO3t0hC81KypF5NxH75gJubJS62f5SpNDtlkY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsApiWorker.h</key>
@@ -1143,11 +1143,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Rkgdb5iXVjBb0AkNHXLRS2BbVkQ=
+			8Nkqd8zvlgIQWnYdbbySVWOut4Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			kbmzZeHfcsKL6AyODHtbf4AmuT6pGUwVttxbUimT3qY=
+			EKRA95aKqpUTljLhpSAvCwuf73Z8tOGaSYozxMW2Ers=
 			</data>
 		</dict>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
