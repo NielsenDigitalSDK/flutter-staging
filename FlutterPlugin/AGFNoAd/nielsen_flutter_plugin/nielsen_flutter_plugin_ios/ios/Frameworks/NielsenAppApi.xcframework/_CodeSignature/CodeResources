@@ -22,7 +22,7 @@
 		</data>
 		<key>ios-arm64/NielsenAppApi.framework/Info.plist</key>
 		<data>
-		SGlyKzMfn4LJ3/HFfmIb28FGQ8w=
+		boRKFMKKwzGFttZHzwQaJmgR4vg=
 		</data>
 		<key>ios-arm64/NielsenAppApi.framework/Modules/module.modulemap</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>ios-arm64/NielsenAppApi.framework/NielsenAppApi</key>
 		<data>
-		P0XW24GLQGYKTP+LVESBIDVW9z4=
+		PQDu5l9j37nhtsU4FRkmYIYKOjo=
 		</data>
 		<key>ios-arm64/NielsenAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/NielsenAppApi</key>
 		<data>
-		kgFAZmvDewIC/hC6s4fwp8+/uQM=
+		yfF6X6zo1C3k/9crcxbExONE5Ds=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsApiWorker.h</key>
 		<data>
-		VXKrAxTsZgaBrk4cLzhzHE4/lRE=
+		hNiCHydwMDJGps3xO6JpipZvOL8=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsBaseDataProcessor.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/Resources/Info.plist</key>
 		<data>
-		o8jdOt+5iL1IwXS8coRz7zhLFe8=
+		bdXoilSaK75ZU6+vm6AEYiB44DQ=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/Resources/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -154,7 +154,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NielsenAppApi.framework/Info.plist</key>
 		<data>
-		7tbqwyPB3ZSmOL7mT5sMi0cCdWQ=
+		pwbZHqVUMN9AsZYjfXw05+XcTsg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NielsenAppApi.framework/Modules/module.modulemap</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NielsenAppApi.framework/NielsenAppApi</key>
 		<data>
-		+xCaOuQHRPUpP+Lu9vVcFXtesvI=
+		U54utIGxDLSXMuTjtqG1OeEIpKw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NielsenAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -170,7 +170,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NielsenAppApi.framework/_CodeSignature/CodeResources</key>
 		<data>
-		aTugVqIFG2kfuRkqo3USrppMW7c=
+		m7qCilu87XvSlM8B9ysQ9mmlA8k=
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/Headers/NielsenAppApi-umbrella.h</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/Info.plist</key>
 		<data>
-		lzP83OYbpyqMVXQzStCgKVp/wTQ=
+		BiZB1CHiFtk4le3D1J5mje+kZv8=
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/Modules/module.modulemap</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		uV87KNDYISnvEckM4HNRIHFGDb4=
+		Acxn2FMtOhc+erBXSPv/WYDfumo=
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -222,7 +222,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/Info.plist</key>
 		<data>
-		TyNg/DEm6CgGp/jUm63WyJXJ6Us=
+		hVJ0d7hFNjKUYO2+gFEo5TFEx+Q=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/Modules/module.modulemap</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		Y805s3StwVPkLO5kWfzebs6eBj0=
+		FXTid6AprPrUhkxuDR+wYh9L6AQ=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -238,7 +238,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/_CodeSignature/CodeResources</key>
 		<data>
-		Ls3MUtsn7US+9aGPLfZiyBYw6x4=
+		rjQCQiyyubD3e2KxFgvw66iE+gw=
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/Headers/NielsenAppApi-umbrella.h</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/Info.plist</key>
 		<data>
-		YPa8IfSCEEm10ICcWc8v47y8kWg=
+		8wXWasMBywZYVOVZ0LY6v5LeMa4=
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/Modules/module.modulemap</key>
 		<data>
@@ -266,7 +266,7 @@
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/NielsenVisionAppApi</key>
 		<data>
-		8KDjWPVnLhK3WEyutau0g7UwIAI=
+		xR7tD6t8dzO5psqj2JNHaSrBaFQ=
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -290,7 +290,7 @@
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/Info.plist</key>
 		<data>
-		DAn7vMh6bVyLGHzIpbTQIGttXdY=
+		k9jjDFaEBFRuAr+/sCuFNDJRpts=
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/Modules/module.modulemap</key>
 		<data>
@@ -298,7 +298,7 @@
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/NielsenVisionAppApi</key>
 		<data>
-		oh5ot7owwlZRi/y1d62GO6lMATA=
+		8Nkqd8zvlgIQWnYdbbySVWOut4Y=
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -306,7 +306,7 @@
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/_CodeSignature/CodeResources</key>
 		<data>
-		G/IbJbngx2rqgSwjFH1tejPLVxo=
+		rB+EVGLd6ul0SBQ4CjrG+VC8f9I=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -359,11 +359,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SGlyKzMfn4LJ3/HFfmIb28FGQ8w=
+			boRKFMKKwzGFttZHzwQaJmgR4vg=
 			</data>
 			<key>hash2</key>
 			<data>
-			m8r5PJyWclZKW/SMCFVRhVhMDk6FA1oZvCF7qB1ryRU=
+			HeOKclJojwqyD5CDOTaI0jDeeWzqhKgY0ALgPdANdCk=
 			</data>
 		</dict>
 		<key>ios-arm64/NielsenAppApi.framework/Modules/module.modulemap</key>
@@ -381,11 +381,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			P0XW24GLQGYKTP+LVESBIDVW9z4=
+			PQDu5l9j37nhtsU4FRkmYIYKOjo=
 			</data>
 			<key>hash2</key>
 			<data>
-			nx993BDwOpnoilrl/rJmpS5Qc2+vW4k1Fsl9kr/2Pjc=
+			Q8efu6X5lseVz1JmE4aZJq84Wbz3ynNzkTPUVHUBGCI=
 			</data>
 		</dict>
 		<key>ios-arm64/NielsenAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -478,22 +478,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kgFAZmvDewIC/hC6s4fwp8+/uQM=
+			yfF6X6zo1C3k/9crcxbExONE5Ds=
 			</data>
 			<key>hash2</key>
 			<data>
-			KzESuvF5elqprWmAPvh4uz2YlTohpzRn1Rqg/G0cpeo=
+			oT5TpYEO3t0hC81KypF5NxH75gJubJS62f5SpNDtlkY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsApiWorker.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VXKrAxTsZgaBrk4cLzhzHE4/lRE=
+			hNiCHydwMDJGps3xO6JpipZvOL8=
 			</data>
 			<key>hash2</key>
 			<data>
-			08QLPftUnqO/ebEl9Jc2K4Tqb5YXuoVnaY58+tN1xgc=
+			GpaEnWMq3jF6z9oxRWQH/MySWQyP+O4ZcdrU/n4BX2A=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsBaseDataProcessor.h</key>
@@ -676,11 +676,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			o8jdOt+5iL1IwXS8coRz7zhLFe8=
+			bdXoilSaK75ZU6+vm6AEYiB44DQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			+k1C+1alJ3vI6UdseLQnq3YLryqVBPhbvqWZ8gD1bFg=
+			dr9WctKVop3ytD2qdjvfDYKEvH43ndi/tXyERX1zRXs=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/Resources/PrivacyInfo.xcprivacy</key>
@@ -747,11 +747,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7tbqwyPB3ZSmOL7mT5sMi0cCdWQ=
+			pwbZHqVUMN9AsZYjfXw05+XcTsg=
 			</data>
 			<key>hash2</key>
 			<data>
-			5zn5XlG/TnyPW5K59JexvmVSUAT0CDT5WpIAhNVxE9w=
+			OYhWyDdzYA3kX5nHE5WxmmGjWDoc9735ahxWn0t+Khw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NielsenAppApi.framework/Modules/module.modulemap</key>
@@ -769,11 +769,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+xCaOuQHRPUpP+Lu9vVcFXtesvI=
+			U54utIGxDLSXMuTjtqG1OeEIpKw=
 			</data>
 			<key>hash2</key>
 			<data>
-			LE2Dqrxr8dfHMtERPOJCrC1W/IrLH51uHU7PIwN5RcU=
+			zQMIqGBNmQjP8AzEyIPZzMZQBvDo6oEdAVgXsNUFsj0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NielsenAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -791,11 +791,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aTugVqIFG2kfuRkqo3USrppMW7c=
+			m7qCilu87XvSlM8B9ysQ9mmlA8k=
 			</data>
 			<key>hash2</key>
 			<data>
-			KaoMtPcWQLFRbnh8vyzYrAsMhEuooMcIX7Z4gc3Ho3c=
+			PEB8T9CItrh61r6dGgc/mLaGjR5sCqH8eEktrV++eeI=
 			</data>
 		</dict>
 		<key>tvos-arm64/NielsenTVAppApi.framework/Headers/NielsenAppApi-umbrella.h</key>
@@ -846,11 +846,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lzP83OYbpyqMVXQzStCgKVp/wTQ=
+			BiZB1CHiFtk4le3D1J5mje+kZv8=
 			</data>
 			<key>hash2</key>
 			<data>
-			eB0dLwLBFFoM4XflggiVLmbSBC3bW3GwDv+13B7sllM=
+			OLLV8KSy+z1aGMGL6A7AE5S/VMhYrL3Xn93ipWBFSCM=
 			</data>
 		</dict>
 		<key>tvos-arm64/NielsenTVAppApi.framework/Modules/module.modulemap</key>
@@ -868,11 +868,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uV87KNDYISnvEckM4HNRIHFGDb4=
+			Acxn2FMtOhc+erBXSPv/WYDfumo=
 			</data>
 			<key>hash2</key>
 			<data>
-			m4Eu7F0DyIsyM5/C6glFG0NuPtWBEbyJFuJ6zYf8Dho=
+			MPrrByTiTskDUS2Tb5SgtS4OjMnsw3jFjIU+NalOUNs=
 			</data>
 		</dict>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -934,11 +934,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TyNg/DEm6CgGp/jUm63WyJXJ6Us=
+			hVJ0d7hFNjKUYO2+gFEo5TFEx+Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			MvQSRBenM9sKHwO1xx3efYMFLH2HYfR1I59tuXTn85g=
+			l81+DR6GYpcHM+F4Tb4N7oOU7+D+ziBL+ZAd2r9L5Ls=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/Modules/module.modulemap</key>
@@ -956,11 +956,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y805s3StwVPkLO5kWfzebs6eBj0=
+			FXTid6AprPrUhkxuDR+wYh9L6AQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			1cx9IpKVQHU34rywlKfEGBmz/0kwLs8/V90VUWp1aJo=
+			x4RCqgY6ejEVSCWDfGkHI5ai9XqWsCgCy+zbhRTAhuk=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -978,11 +978,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ls3MUtsn7US+9aGPLfZiyBYw6x4=
+			rjQCQiyyubD3e2KxFgvw66iE+gw=
 			</data>
 			<key>hash2</key>
 			<data>
-			VLgPBTYb2g1PphPFoHTpTzl650zRuWbfMaZYTKH8nSg=
+			Ue25rQZ5pjG7BRiHv7JC/ZQ4fy0cVMGUZyhK3I3DkOo=
 			</data>
 		</dict>
 		<key>xros-arm64/NielsenVisionAppApi.framework/Headers/NielsenAppApi-umbrella.h</key>
@@ -1033,11 +1033,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YPa8IfSCEEm10ICcWc8v47y8kWg=
+			8wXWasMBywZYVOVZ0LY6v5LeMa4=
 			</data>
 			<key>hash2</key>
 			<data>
-			hgtmqYXtoF1ZE9uTPpk8jPAmqzxbiW7hHJ3SXlSablk=
+			VqP1BmFHYUFb5Wzxy9Xh2NPsxH81BIzhrA00noJP7Ps=
 			</data>
 		</dict>
 		<key>xros-arm64/NielsenVisionAppApi.framework/Modules/module.modulemap</key>
@@ -1055,11 +1055,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8KDjWPVnLhK3WEyutau0g7UwIAI=
+			xR7tD6t8dzO5psqj2JNHaSrBaFQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			ggiPxsbE+cq8e7WCe1OKy36JL1ib24pjctv/E8unwpE=
+			VC05Jx/0VrNry2Tk5silcI+W3QjXlh8lFXh/6wIQvms=
 			</data>
 		</dict>
 		<key>xros-arm64/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -1121,11 +1121,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DAn7vMh6bVyLGHzIpbTQIGttXdY=
+			k9jjDFaEBFRuAr+/sCuFNDJRpts=
 			</data>
 			<key>hash2</key>
 			<data>
-			h+CqLxpjJtL8PrYxE+RtfLmfO2mxoTinBg1D/jmP9Sw=
+			nM7TWuR7eHiNhHHUFLFiceH5sRhy9ccr3s8BDLVWPAA=
 			</data>
 		</dict>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/Modules/module.modulemap</key>
@@ -1143,11 +1143,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oh5ot7owwlZRi/y1d62GO6lMATA=
+			8Nkqd8zvlgIQWnYdbbySVWOut4Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			jvlSKgYGNBj345MeTGriKwNxLF5WjSGN9JDLNRPMnUk=
+			EKRA95aKqpUTljLhpSAvCwuf73Z8tOGaSYozxMW2Ers=
 			</data>
 		</dict>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -1165,11 +1165,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G/IbJbngx2rqgSwjFH1tejPLVxo=
+			rB+EVGLd6ul0SBQ4CjrG+VC8f9I=
 			</data>
 			<key>hash2</key>
 			<data>
-			vVZwDck6wEnaMbnGI9A9fsxtaS2YezCxptV5gRxYl7M=
+			bHvDgKdJsJmc5QujGqdK5gUQM2OhVOBb7x813e0TB1U=
 			</data>
 		</dict>
 	</dict>

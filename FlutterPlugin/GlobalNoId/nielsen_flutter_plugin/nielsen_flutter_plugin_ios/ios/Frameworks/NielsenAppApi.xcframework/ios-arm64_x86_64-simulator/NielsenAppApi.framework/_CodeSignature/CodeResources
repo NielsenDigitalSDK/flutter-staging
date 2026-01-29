@@ -26,11 +26,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7tbqwyPB3ZSmOL7mT5sMi0cCdWQ=
+		pwbZHqVUMN9AsZYjfXw05+XcTsg=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		TptNV4ojSoLKFWU79L2sFTXsNVE=
+		m+eopRSNo0Tji1I/LcdEXz1nosQ=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		d2JMGcOdNYu6CELPYgqwKNzZLjY=
+		LovtOpqXQ7FzNseg1tcy6S4Ecak=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		TptNV4ojSoLKFWU79L2sFTXsNVE=
+		m+eopRSNo0Tji1I/LcdEXz1nosQ=
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CpMqbjannGD0DRIyWrUBTVhNjbU=
+		xYDgeOD1dY5vwpiVJxeFQTxKsZg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>PrivateHeaders/NlsApiWorker.h</key>
 		<data>
-		VXKrAxTsZgaBrk4cLzhzHE4/lRE=
+		hNiCHydwMDJGps3xO6JpipZvOL8=
 		</data>
 		<key>PrivateHeaders/NlsBaseDataProcessor.h</key>
 		<data>
@@ -186,7 +186,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mRKNTevVBkEeQw3ZamSQ5OYybjOtVNbu7QSdJTHSQh8=
+			7ipKg6+CqaXfR6vswIp3gYmLL/OVTkPaup0qGJMCR8A=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -214,14 +214,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ur+KDhjJXf1kaH9GSfFy2gqjLPX/MK+lTpiG1fj3x74=
+			lKk+H7WuaQmlimxYSgd+ZFLjjEd694TimonNgbDTUho=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mRKNTevVBkEeQw3ZamSQ5OYybjOtVNbu7QSdJTHSQh8=
+			7ipKg6+CqaXfR6vswIp3gYmLL/OVTkPaup0qGJMCR8A=
 			</data>
 		</dict>
 		<key>Modules/NielsenAppApi.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -249,7 +249,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OJz0pZFAI0YB5qZenYmgEf7CjpBgrQ6d2dtZEFD2Nk0=
+			F0g5xNN8DjJWiwmrGEBjUrre8Lj622GHVPDujZHmlaM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -270,7 +270,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			08QLPftUnqO/ebEl9Jc2K4Tqb5YXuoVnaY58+tN1xgc=
+			GpaEnWMq3jF6z9oxRWQH/MySWQyP+O4ZcdrU/n4BX2A=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NlsBaseDataProcessor.h</key>
