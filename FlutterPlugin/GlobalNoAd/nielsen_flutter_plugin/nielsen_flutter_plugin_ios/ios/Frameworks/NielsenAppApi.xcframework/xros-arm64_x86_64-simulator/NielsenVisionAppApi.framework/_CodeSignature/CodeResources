@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		VODRObGJs4Zd3G60FlNJQeX5bz8=
+		o14Vo/SPmdZfbpdQN0aOzME4cqg=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		rWx7U1aRjdgxYSbNqpCs2R4JWAA=
+		El7ihAsywdN38Ura60rSEjcxKfw=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		VODRObGJs4Zd3G60FlNJQeX5bz8=
+		o14Vo/SPmdZfbpdQN0aOzME4cqg=
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		etQ5DWN11rTJSLLnoxnUxIYz5F4=
+		B0oilULlfG2hxH4ZAIGSFdVVcIc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>PrivateHeaders/NlsViewPattern.h</key>
 		<data>
-		wMX3Ahcsk61Z2oFFP0PQL0m91ew=
+		8VQuOmu7TbJobawhfcklPAmKG/w=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -190,7 +190,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			efMNTKfh8QeX6BzteGel3+OqDYn5npzE2jxffhVblCk=
+			V6yCxjtxvY153udHCnFsl43sNg2Zbflgnfn4c0dUoJg=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
@@ -218,14 +218,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nWle5uoVT3bWwuTJ+koVfdlJWC5Ou6v8VQZCvd7AwoM=
+			uG/nEejIzpa6Ag4lU5xT6BaL68FDS5qR4fZ2/x4Ojng=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			efMNTKfh8QeX6BzteGel3+OqDYn5npzE2jxffhVblCk=
+			V6yCxjtxvY153udHCnFsl43sNg2Zbflgnfn4c0dUoJg=
 			</data>
 		</dict>
 		<key>Modules/NielsenVisionAppApi.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
@@ -253,7 +253,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lBwkvHTGi2WdLjxrO3X9QTdHz8/XRjeJ755oGuASqYw=
+			uLHv6E3ovfECo1GAWnbnbsi8JNUSMgQF9mcbt/vaALA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -393,7 +393,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g1bv7dgvVdLM53W2z5KWu6wmsBZXVnFW9pNf5DFNghE=
+			asc6kcB7JRMaVYaCp0lV/N+9x7slPKMjqAi5Y9et8aE=
 			</data>
 		</dict>
 	</dict>
