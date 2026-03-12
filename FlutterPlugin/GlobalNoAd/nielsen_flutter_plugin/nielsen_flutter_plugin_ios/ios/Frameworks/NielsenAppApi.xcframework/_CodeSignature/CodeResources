@@ -58,7 +58,7 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/NielsenAppApi</key>
 		<data>
-		HlENUCUQGW9r89hWRXxWCORjoAk=
+		+ya/iISkYi385z2DyeXTidNlnY8=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsApiWorker.h</key>
 		<data>
@@ -478,11 +478,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HlENUCUQGW9r89hWRXxWCORjoAk=
+			+ya/iISkYi385z2DyeXTidNlnY8=
 			</data>
 			<key>hash2</key>
 			<data>
-			rtX1eZySPYP7/Je34wUnNf5o6uSBRVBDEfpYZc4o3vA=
+			em+lHsAGUNSkG+riWOH9xnaG/W7rjWqGEq2GVsPl5Vs=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NlsApiWorker.h</key>
