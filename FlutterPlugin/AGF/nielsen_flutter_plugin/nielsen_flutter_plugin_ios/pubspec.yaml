@@ -1,6 +1,6 @@
 name: nielsen_flutter_plugin_ios
 description: iOS implementation of the nielsen_flutter_plugin plugin
-version: 10.1.0+0
+version: 10.2.0+0
 publish_to: none
 
 environment:
