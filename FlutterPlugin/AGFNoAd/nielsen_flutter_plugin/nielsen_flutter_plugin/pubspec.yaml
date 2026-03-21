@@ -1,6 +1,6 @@
 name: nielsen_flutter_plugin
 description: A common plugin interface for the Nielsen AppSDK Flutter Plugin.
-version: 10.1.0+0
+version: 10.2.0+0
 publish_to: none
 
 environment:
