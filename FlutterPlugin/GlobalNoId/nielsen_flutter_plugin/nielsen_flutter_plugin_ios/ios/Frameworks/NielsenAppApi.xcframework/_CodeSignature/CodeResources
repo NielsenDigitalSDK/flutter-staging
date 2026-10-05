@@ -58,7 +58,7 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/NielsenAppApi</key>
 		<data>
-		BANp1k/sd6QCZ4qiT+AoTMxp8c4=
+		T1pjoqWKvd1bEv3Ldgw6XdXOoRU=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NielsenAppApi+Priv.h</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		UIg803RSkeVAiCTIRiFDvBR23eM=
+		dsfOll1k0Ab2V+bVUNlBu0W/bgQ=
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		T6bYr+Qd2hKms++3lbND0O/Oh+8=
+		3qsCprn+oWvEOwNRjGKsFnPyrps=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/NielsenVisionAppApi</key>
 		<data>
-		KueVuKXkUbD/BfObI3JhaBwQNKY=
+		Iq8JYlElqkKpLUZg0REmniHf3Hc=
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -386,7 +386,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lS8eCGe2xjFAwVgNDOdY09DISA6ygjyYHyeLI1yBHr4=
+			/6X8AgZbVAEhEeZNMLSecqc4Ixwd+GOcr80Lac0kPgY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NielsenAppApi+Priv.h</key>
@@ -566,7 +566,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SPeocAarhMAyYGcnSF8ne+N/IXFU0P+AXbOcA7H/eP0=
+			MkQjAxJvcFKnXWBV3cKi716Y3N1Zr32zzztbPXptacc=
 			</data>
 		</dict>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -622,7 +622,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7HWiQBp25dtr7HrbLYNATzdPbOYIKyL58GZYJ1YkLIY=
+			lhL9AfHXB4JbhjQEcX1I899FsRCq/I25MKNb+m7G+qA=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -741,7 +741,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mwuCNF0/d8D05JMqSOLCXBng54GL+YPz+w7ULCEo8/A=
+			QiF7u4qc1Ii4aipPL+QoucaxRIjN6CBhJEd6XxHrAp8=
 			</data>
 		</dict>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
