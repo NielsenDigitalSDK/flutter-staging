@@ -58,7 +58,7 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/NielsenAppApi</key>
 		<data>
-		5Cc61ZUhL+rH1lTz+m8QAgnIHeY=
+		JipfRcZYNnPGxm6tuYDRze42c8Q=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NielsenAppApi+Priv.h</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		U81MG/o29mtL8my1wxwcHeRWkhw=
+		lmgaJ77ZFjnv8harxZky7Jq2/vY=
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		5HgYrmZsktjn5BdL+3E134GyR6E=
+		dKaJMpzt+zwMwfbR5vYfg2gZOFM=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/NielsenVisionAppApi</key>
 		<data>
-		utAwk3O8lZDWRmouz+1wqrFPOYw=
+		0oNFsjcxA6fak1httBwC1shFj6o=
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -386,7 +386,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S3FSewlsAXfpsD6NIxzh4ZXxcCRZ97+MvtdmPhCEh6A=
+			voIUte9W3aAHgWsod7srrhwyqOHBE+/LEYp6Hl5gbbs=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NielsenAppApi.framework/Versions/A/PrivateHeaders/NielsenAppApi+Priv.h</key>
@@ -566,7 +566,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8KHYVciIIboRnB7qn+2E8orWVuPurPGy5kn46I4MYAo=
+			EufsjWUFiTlZTQO7rnx5S9ey2im6cASELepGCF6agpM=
 			</data>
 		</dict>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -622,7 +622,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Rza1j/z3S4OW8D5nPucX9v4pnHdnXyml9PTb3DHz4go=
+			LbZQYIDPGeQmzcn6GelVodsKHQXd3O3EabpQKlDUoU4=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -685,7 +685,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ptadGuYPuIWDuhOiBON43i6A0COClKmpkGvsWoPI3VY=
+			iuBZmewXiJl+PowglvH3HGM37letHPWa9w93Z5hV4Pc=
 			</data>
 		</dict>
 		<key>xros-arm64/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
