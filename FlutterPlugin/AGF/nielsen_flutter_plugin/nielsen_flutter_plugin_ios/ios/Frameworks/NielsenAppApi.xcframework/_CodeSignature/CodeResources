@@ -158,7 +158,7 @@
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		IjPgo9H38Rk24wHNXwtmbMnbOHQ=
+		XbDzt7XbDRGrFMWZ8sT2+bcgQ+w=
 		</data>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/NielsenTVAppApi</key>
 		<data>
-		4NIGO/m2JWwUa94e5p82VCDreOg=
+		SJ8wutV/4/S07nQf2E6pUds4QlU=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/NielsenVisionAppApi</key>
 		<data>
-		+zEZ0BQAFpNCVCm0FmePDuB954Q=
+		4GgrNrMO/pbdVdzUfavtg0csA/M=
 		</data>
 		<key>xros-arm64/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/NielsenVisionAppApi</key>
 		<data>
-		b4nvm89tNXooCy8pW0pE9Fyei7w=
+		a4cROBTpWJbwKu+yXdaU0YpcvQA=
 		</data>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -566,7 +566,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i9gyeOErBcuFNbDcCLgCmwLEOh4t7oeW2ZjjVIUfT+E=
+			gliD/sw9tV1pgafJEO3ieJclopD6DPNeuAWCmSytVp0=
 			</data>
 		</dict>
 		<key>tvos-arm64/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -622,7 +622,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nPnnP7T36wJIvAviDsvpL1+4hRmTo6SCH5XybtdlCak=
+			jndjPCw5GcP3ccuQ0XBJulK2nDD/InkcAjzOmLhEdys=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NielsenTVAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -685,7 +685,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pr+N6Nv14YGpYddpRaAibnkUSfWH53/ohYbz+1TcIT4=
+			hFh42ZPZObFjnboSpCE4Jo3wCy2drfnuHZwZ40r87Jg=
 			</data>
 		</dict>
 		<key>xros-arm64/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
@@ -741,7 +741,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iU9mY9PhVEg/TfcB2mVewYWeTj1vVeQoRG2lt/OJOFQ=
+			DPHkM2bECMdK0zvRfuZlmWg+O7/dscMXvfyDQpX7AIc=
 			</data>
 		</dict>
 		<key>xros-arm64_x86_64-simulator/NielsenVisionAppApi.framework/PrivacyInfo.xcprivacy</key>
